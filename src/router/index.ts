@@ -4,29 +4,29 @@ import {
   type RouteRecordRaw,
 } from 'vue-router';
 
-export interface modulesType {
-  default: RouteRecordRaw[];
-  route: RouteRecordRaw[];
-}
-
 export const children: RouteRecordRaw[] = [];
 
 const paths = new Set<string>();
-// get .ts of modules files, return [object object]
-const modules = import.meta.glob('./modules/*.ts', { eager: true }); //eager:表示直接导入所有模块
-const rm = Object.values(modules) as modulesType[];
+// 从文件系统导入多个模块, return [object object]
+const modules = import.meta.glob('./modules/*.ts', {
+  import: 'default',
+  eager: true, //eager:表示直接导入所有模块
+});
 
+const rm = Object.values(modules) as RouteRecordRaw[][];
 for (const rts of rm) {
   // 匹配到的文件默认是懒加载的，通过动态导入实现，并会在构建时分离为独立的 chunk
   //   modules[ts]().then((mod: any) => {
   //     console.log('mod', mod);
   //   })
-  const p = rts.default[0].path;
-  if (paths.has(p)) {
-    console.log('The route is already exit!');
-  } else {
-    paths.add(p);
-    children.push(rts.default[0]);
+  for (const rt of rts) {
+    const p = rt.path;
+    if (paths.has(p)) {
+      console.log('The route is already exit!');
+    } else {
+      paths.add(p);
+      children.push(rt);
+    }
   }
 }
 
