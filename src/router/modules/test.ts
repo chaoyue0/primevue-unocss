@@ -5,7 +5,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/test1',
     name: RouteName.TestPage1,
-    component: () => import('@/views/TestPage.vue'),
+    component: () => import('@/views/TestPageOne.vue'),
     meta: {
       menuGroup: MenuGroup.Test,
     },
@@ -13,7 +13,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/test2',
     name: RouteName.TestPage2,
-    component: () => import('@/views/TestPage.vue'),
+    component: () => import('@/views/TestPageTwo.vue'),
     meta: {
       menuGroup: MenuGroup.Test,
     },

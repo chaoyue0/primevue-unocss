@@ -30,12 +30,10 @@ menus.push(
 
 //为menus添加子菜单
 for (const rt of children) {
-  console.log('rt', rt);
   const rgp = rt.meta?.menuGroup;
   const rn = rt.name as string;
   if (rgp && rn) {
     const top = menus.find((it: MenuItem) => it.title === rgp);
-    console.log('top', top);
     if (!top) continue;
     const sub = top.items?.find((it: MenuItem) => it.title === rn); //寻找menus中items属性是否为空
     if (sub) {

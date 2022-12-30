@@ -1,8 +1,9 @@
 import {
   createRouter,
-  createWebHistory,
+  createWebHashHistory,
   type RouteRecordRaw,
 } from 'vue-router';
+import { RouteName } from '@/router/router';
 
 export const children: RouteRecordRaw[] = [];
 
@@ -33,19 +34,15 @@ for (const rts of rm) {
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'home',
+    name: RouteName.Home,
+    redirect: '/test-home',
     component: () => import('@/views/HomeView.vue'),
     children,
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/AboutView.vue'),
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
 });
 

@@ -5,7 +5,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/test-home',
     name: RouteName.Home,
-    component: () => import('@/views/AboutView.vue'),
+    component: () => import('@/views/HomeView.vue'),
     meta: {
       menuGroup: MenuGroup.Home,
     },

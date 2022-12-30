@@ -1,9 +1,10 @@
+<template>
+  <h1>I am HomeView</h1>
+  <RouterView></RouterView>
+</template>
+
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue';
+import { RouterView } from 'vue-router';
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style scoped></style>
