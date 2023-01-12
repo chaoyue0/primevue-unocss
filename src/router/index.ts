@@ -33,10 +33,15 @@ for (const rts of rm) {
 
 export const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/test-home',
     name: RouteName.Home,
-    redirect: '/test-home',
     component: () => import('@/views/HomeView.vue'),
+  },
+  {
+    path: '/',
+    name: RouteName.MainView,
+    redirect: '/test-home',
+    component: () => import('@/MainView.vue'),
     children,
   },
 ];

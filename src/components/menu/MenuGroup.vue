@@ -13,18 +13,18 @@
 import MenuItem from './MenuItem.vue';
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .menu-top {
   display: flex;
   margin: 0 auto;
   height: 100px;
-  background-color: orange;
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
   width: 200px;
   height: 100px;
-  background-color: #204c89;
 }
 
 .menu-group {

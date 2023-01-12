@@ -125,65 +125,6 @@ a {
   margin-right: var(--wg-input-margin);
 }
 
-.wg-fix-input {
-  width: var(--wg-input-width) !important;
-}
-
-.wg-fix-input-big {
-  width: calc(2 * var(--wg-input-width)) !important;
-}
-
-.el-table .cell {
-  text-align: center;
-}
-
-.el-form-item div {
-  width: var(--wg-form-item-width);
-}
-
-.column-layout {
-  display: flex;
-  flex-direction: column;
-}
-
-.el-table .el-button + .el-button {
-  margin-left: 0;
-}
-
-h3 {
-  font-size: 21px;
-  margin-top: 20px;
-  padding-left: 20px;
-  border-left: 8px solid #204c89;
-  font-weight: 500;
-}
-
-.grid-content {
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  font-size: 14px;
-  height: 100%;
-  border: 1px solid #ebeef5;
-  input {
-    text-align: center;
-  }
-  .el-checkbox {
-    margin-left: 120px;
-  }
-}
-.bg-purple-light {
-  background: #f2f2f2;
-  font-weight: bold;
-  border-right: 1px solid #ebeef5;
-}
-
-h3 {
-  font-size: 21px;
-  margin-top: 20px;
-  padding-left: 20px;
-  border-left: 8px solid #204c89;
-  font-weight: 500;
+.cursor-pointer:hover {
+  cursor: pointer;
 }
