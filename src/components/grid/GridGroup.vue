@@ -5,14 +5,26 @@
       :key="item.index"
       :value="item"
       :grid-item="item"
+      :label-position="props.labelPosition"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import GridItem from './GridItem.vue';
+import type { GridItemData } from '@/views/MockPageOne';
 
-const props = defineProps<{ gridList: []; column?: number }>();
+const props = withDefaults(
+  defineProps<{
+    labelPosition?: 'left' | 'right' | 'center';
+    gridList: GridItemData[];
+    column?: number;
+  }>(),
+  {
+    labelPosition: 'left',
+    column: 3,
+  }
+);
 </script>
 
 <style scoped>
@@ -25,8 +37,6 @@ const props = defineProps<{ gridList: []; column?: number }>();
   );
   justify-items: center;
   row-gap: 30px;
-  width: 90vw;
-  margin: 0 auto;
-  background-color: #2a598a;
+  background-color: #f2f2f2;
 }
 </style>
