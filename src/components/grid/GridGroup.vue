@@ -1,11 +1,18 @@
 <template>
-  <div class="grid-group" :style="{ '--repeatColumns': props.column }">
+  <div
+    class="grid-group"
+    :style="{
+      '--repeatColumns': props.column,
+    }"
+  >
     <grid-item
       v-for="item in props.gridList"
       :key="item.index"
       :value="item"
       :grid-item="item"
       :label-position="props.labelPosition"
+      :width="props.width"
+      :height="props.height"
     />
   </div>
 </template>
@@ -19,10 +26,14 @@ const props = withDefaults(
     labelPosition?: 'left' | 'right' | 'center';
     gridList: GridItemData[];
     column?: number;
+    width?: number;
+    height?: number;
   }>(),
   {
     labelPosition: 'left',
     column: 3,
+    width: 300,
+    height: 300,
   }
 );
 </script>
