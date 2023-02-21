@@ -13,6 +13,8 @@
       :label-position="props.labelPosition"
       :width="props.width"
       :height="props.height"
+      :photo-width="photoWidth"
+      :photo-height="photoHeight"
     />
   </div>
 </template>
@@ -28,12 +30,16 @@ const props = withDefaults(
     column?: number;
     width?: number;
     height?: number;
+    photoWidth?: number;
+    photoHeight?: number;
   }>(),
   {
     labelPosition: 'left',
     column: 3,
     width: 300,
     height: 300,
+    photoWidth: 100,
+    photoHeight: 100,
   }
 );
 </script>

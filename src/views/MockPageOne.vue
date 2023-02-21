@@ -23,6 +23,18 @@
     placeholder="请输入子网格的高度"
     clearable
   />
+  <el-input
+    v-model="photoWidth"
+    oninput="value=value.replace(/[^\d]/g,'')"
+    placeholder="请输入photo的宽度"
+    clearable
+  />
+  <el-input
+    v-model="photoHeight"
+    oninput="value=value.replace(/[^\d]/g,'')"
+    placeholder="请输入photo的高度"
+    clearable
+  />
   <el-button @click="reset">重置</el-button>
   <grid-group
     :grid-list="gridList"
@@ -30,6 +42,8 @@
     :label-position="labelPosition"
     :width="width"
     :height="height"
+    :photo-width="photoWidth"
+    :photo-height="photoHeight"
   />
 </template>
 
@@ -42,11 +56,15 @@ const column = ref<number>();
 const labelPosition = ref('left');
 const width = ref<number>();
 const height = ref<number>();
+const photoWidth = ref<number>();
+const photoHeight = ref<number>();
 
 function reset() {
   column.value = undefined;
   width.value = undefined;
   height.value = undefined;
+  photoWidth.value = undefined;
+  photoHeight.value = undefined;
 }
 </script>
 

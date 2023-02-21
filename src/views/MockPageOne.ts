@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import logo from '@/assets/logo.svg';
 
 export interface GridItemData {
   title: string;
@@ -9,18 +10,22 @@ export interface GridItemData {
 export const gridList = ref<GridItemData[]>([
   {
     title: 'test1',
+    photo: logo,
     content: 'I am test1',
   },
   {
     title: 'test2',
+    photo: logo,
     content: 'I am test2',
   },
   {
     title: 'test3',
+    photo: logo,
     content: 'I am test3',
   },
   {
     title: 'test4',
+    photo: logo,
     content: 'I am test4',
   },
   {
@@ -29,6 +34,7 @@ export const gridList = ref<GridItemData[]>([
   },
   {
     title: 'test6',
+    photo: logo,
     content: 'I am test6',
   },
 ]);

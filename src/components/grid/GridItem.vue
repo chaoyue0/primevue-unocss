@@ -3,12 +3,22 @@
     class="grid-item"
     :style="{
       '--labelPosition': enumPosition(props.labelPosition),
-      '--width': props.width + 'px',
-      '--height': props.height + 'px',
+      width: props.width + 'px',
+      height: props.height + 'px',
     }"
   >
     <div class="title">
       {{ props.gridItem.title }}
+    </div>
+    <div>
+      <img
+        :src="props.gridItem.photo"
+        alt=""
+        :style="{
+          width: props.photoWidth + 'px',
+          height: props.photoHeight + 'px',
+        }"
+      />
     </div>
     <div class="content">
       {{ props.gridItem.content }}
@@ -25,11 +35,15 @@ const props = withDefaults(
     gridItem: GridItemData;
     width?: number;
     height?: number;
+    photoWidth?: number;
+    photoHeight?: number;
   }>(),
   {
     labelPosition: 'left',
     width: 300,
     height: 300,
+    photoWidth: 100,
+    photoHeight: 100,
   }
 );
 
@@ -45,7 +59,7 @@ function enumPosition(s: string) {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .grid-item {
   --labelPosition: 'flex-start';
   --width: 300px;
@@ -53,8 +67,12 @@ function enumPosition(s: string) {
   display: flex;
   flex-direction: column;
   align-items: var(--labelPosition);
-  width: var(--width);
-  height: var(--height);
   background-color: gray;
+  div {
+    margin-top: 20px;
+  }
+  div + div {
+    margin-top: 30px;
+  }
 }
 </style>
