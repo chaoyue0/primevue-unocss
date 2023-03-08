@@ -1,3 +1,4 @@
+@import "mixin";
 :root {
   --wg-navbar-height : 40px;
   --wg-box-wrapper-pad : 10px;
@@ -12,29 +13,39 @@ body {
   margin: 0;
 }
 
-a {
-  text-decoration:none
+@for $n from 1 through 10 {
+  .g-m#{$n} {
+    margin: toPx(10 * $n);
+  }
+  .g-mt#{$n} {
+    margin-top: toPx(10 * $n);
+  }
+  .g-mr#{$n} {
+    margin-right: toPx(10 * $n);
+  }
+  .g-mb#{$n} {
+    margin-bottom: toPx(10 * $n);
+  }
+  .g-ml#{$n} {
+    margin-left: toPx(10 * $n);
+  }
 }
 
-.wg-box-wrapper {
-  background-color: #eef0f4;
-  padding: var(--wg-box-wrapper-pad) 0 var(--wg-box-wrapper-pad) var(--wg-box-wrapper-pad);
-
-  .wg-box-block {
-    padding: var(--wg-box-wrapper-pad);
-    background-color: #ffffff;
-    margin-top: var(--wg-box-wrapper-pad);
-    &:first-child {
-      margin-top: 0;
-    }
+@for $n from 1 through 10 {
+  .g-p#{$n} {
+    padding: toPx(10 * $n);
   }
-
-  .el-table{
-    width: calc(100% - 5px) !important;
+  .g-pt#{$n} {
+    padding-top: toPx(10 * $n);
   }
-
-  th {
-    background-color: #f2f2f2 !important;
+  .g-pr#{$n} {
+    padding-right: toPx(10 * $n);
+  }
+  .g-pb#{$n} {
+    padding-bottom: toPx(10 * $n);
+  }
+  .g-pl#{$n} {
+    padding-left: toPx(10 * $n);
   }
 }
 
@@ -44,54 +55,6 @@ a {
 
 .wg-wid-full{
   width: 100%;
-}
-//
-.wg-pda-mini{
-  padding: var(--wg-box-wrapper-pad)
-}
-.wg-pdt-mini{
-  padding-top: var(--wg-box-wrapper-pad)
-}
-.wg-pdb-mini{
-  padding-bottom: var(--wg-box-wrapper-pad)
-}
-.wg-pdl-mini{
-  padding-left: var(--wg-box-wrapper-pad)
-}
-.wg-pdr-mini{
-  padding-right: var(--wg-box-wrapper-pad)
-}
-
-.wg-mga-mini {
-  margin: var(--wg-box-wrapper-pad);
-}
-.wg-mgt-mini {
-  margin-top: var(--wg-box-wrapper-pad);
-}
-.wg-mgb-mini {
-  margin-bottom: var(--wg-box-wrapper-pad);
-}
-.wg-mgl-mini {
-  margin-left: var(--wg-box-wrapper-pad);
-}
-.wg-mgr-mini {
-  margin-right: var(--wg-box-wrapper-pad);
-}
-
-.wg-mga-big {
-  margin: calc(2 * var(--wg-box-wrapper-pad));
-}
-.wg-mgt-big {
-  margin-top: calc(2 * var(--wg-box-wrapper-pad));
-}
-.wg-mgb-big {
-  margin-bottom: calc(2 * var(--wg-box-wrapper-pad));
-}
-.wg-mgl-big {
-  margin-left: calc(2 * var(--wg-box-wrapper-pad));
-}
-.wg-mgr-big {
-  margin-right: calc(2 * var(--wg-box-wrapper-pad));
 }
 
 .wg-bold{

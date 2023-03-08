@@ -1,0 +1,23 @@
+@function toPx($value, $unit: px) {
+  @return $value + $unit;
+}
+
+@mixin font($size, $line-height, $color) {
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+/*
+写法二：@function
+@function font($size, $line-height) {
+  $font-props: (
+          "font-size": $size,
+          "line-height": $line-height
+  );
+  @return $font-props;
+}*/
+
+@mixin ptl($top, $left) {
+  top: $top;
+  left: $left;
+}
