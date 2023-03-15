@@ -1,7 +1,8 @@
+//unit
 @function toPx($value, $unit: px) {
   @return $value + $unit;
 }
-
+//font
 @mixin font($size, $line-height, $color) {
   font-size: $size;
   line-height: $line-height;
@@ -16,8 +17,39 @@
   );
   @return $font-props;
 }*/
-
-@mixin ptl($top, $left) {
+//position
+@mixin ptl($p, $top, $left) {
+  position: $p;
   top: $top;
   left: $left;
+}
+//height、line-height
+@mixin hh($height, $lineHeight) {
+  height: $height;
+  line-height: $lineHeight;
+}
+//button
+@mixin bc($color) {
+  background-color: $color;
+  &:hover,
+  &:focus {
+    background-color: darken($color, 10%);
+  }
+}
+//border-radius
+@mixin border-top-radius($r, $l) {
+  border-top-right-radius: $r;
+  border-top-left-radius: $l;
+}
+@mixin border-right-radius($t, $b) {
+  border-bottom-right-radius: $b;
+  border-top-right-radius: $t;
+}
+@mixin border-bottom-radius($r, $l) {
+  border-bottom-right-radius: $r;
+  border-bottom-left-radius: $l;
+}
+@mixin border-left-radius($t, $b) {
+  border-bottom-left-radius: $b;
+  border-top-left-radius: $t;
 }

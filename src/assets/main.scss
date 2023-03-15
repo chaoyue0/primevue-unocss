@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+//margin
 @for $n from 1 through 10 {
   .g-m#{$n} {
     margin: toPx(10 * $n);
@@ -30,7 +35,7 @@ body {
     margin-left: toPx(10 * $n);
   }
 }
-
+//padding
 @for $n from 1 through 10 {
   .g-p#{$n} {
     padding: toPx(10 * $n);
@@ -49,8 +54,38 @@ body {
   }
 }
 
-.wg-box-inline {
-  display: inline-block;
+//user-select
+.user-select_no {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.user-select_all {
+  -moz-user-select: all;
+  -webkit-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+//inline align
+.f-tl {
+  text-align: left;
+}
+.f-tc {
+  text-align: center;
+}
+.f-tr {
+  text-align: right;
+}
+.f-vt {
+  vertical-align: top;
+}
+.f-vm {
+  vertical-align: middle;
+}
+.f-vb {
+  vertical-align: bottom;
 }
 
 .wg-wid-full{
@@ -77,15 +112,6 @@ body {
 
 .wg-top-popper {
   width: 200px;
-}
-
-.wg-break-line {
-  display: flex;
-  padding: var(--wg-box-wrapper-pad);
-}
-
-.wg-break-line > div {
-  margin-right: var(--wg-input-margin);
 }
 
 .cursor-pointer:hover {
