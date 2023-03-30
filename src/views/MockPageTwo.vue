@@ -1,13 +1,28 @@
 <template>
   <h1>photo optimization</h1>
   <el-button @click="open">打开抽屉</el-button>
+  <div class="flex-column">
+    <img
+      v-for="img in photoList"
+      ref="demo1"
+      :key="img"
+      :src="img"
+      alt="loading"
+    />
+  </div>
   <el-drawer v-model="drawer">
-    <img v-for="img in photoList" :key="img" :src="img" alt="loading" />
+    <img
+      v-for="img in photoList"
+      ref="demo2"
+      :key="img"
+      :src="img"
+      alt="loading"
+    />
   </el-drawer>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { preLoader } from '@/libs/preLoader';
 import test11 from '@/assets/testPreload/img.png';
 import test12 from '@/assets/testPreload/img_1.png';
@@ -26,6 +41,7 @@ import test4 from '@/assets/testPreload/test4.jpg';
 import test3 from '@/assets/testPreload/test3.jpg';
 import test2 from '@/assets/testPreload/test2.jpg';
 import test1 from '@/assets/testPreload/test1.jpg';
+import { lazyLoader } from '@/libs/lazyLoader';
 
 const drawer = ref(false);
 const photoList = [
@@ -52,10 +68,23 @@ onMounted(() => {
   preLoader(photoList, () => {
     console.log('图片加载好了');
   });
+  demo1.value.map((it: HTMLElement) => {
+    console.log(it.getBoundingClientRect());
+    console.log('lazyLoader', lazyLoader(it));
+  });
 });
+
+const demo1 = ref();
+const demo2 = ref();
 
 function open() {
   drawer.value = true;
+  nextTick(() => {
+    demo2.value.map((it: HTMLElement) => {
+      console.log(it.getBoundingClientRect());
+      console.log('lazyLoader', lazyLoader(it));
+    });
+  });
 }
 </script>
 
@@ -63,5 +92,9 @@ function open() {
 img {
   width: 300px;
   height: 200px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 </style>
