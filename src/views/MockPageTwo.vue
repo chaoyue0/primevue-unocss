@@ -6,9 +6,11 @@
       v-for="img in photoList"
       ref="demo1"
       :key="img"
-      :src="img"
+      src=""
+      :data-src="img"
       alt="loading"
     />
+    <div class="border-loader"></div>
   </div>
   <el-drawer v-model="drawer">
     <img
@@ -22,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted, onUnmounted, nextTick } from 'vue';
 import { preLoader } from '@/libs/preLoader';
 import test11 from '@/assets/testPreload/img.png';
 import test12 from '@/assets/testPreload/img_1.png';
@@ -41,10 +43,11 @@ import test4 from '@/assets/testPreload/test4.jpg';
 import test3 from '@/assets/testPreload/test3.jpg';
 import test2 from '@/assets/testPreload/test2.jpg';
 import test1 from '@/assets/testPreload/test1.jpg';
-import { lazyLoader } from '@/libs/lazyLoader';
+import { lazyLoader, checkImages } from '@/libs/lazyLoader';
+import { throttle } from '@/libs/throttle';
 
 const drawer = ref(false);
-const photoList = [
+const photoList = ref([
   test1,
   test2,
   test3,
@@ -62,20 +65,27 @@ const photoList = [
   test15,
   test16,
   test17,
-];
-
-onMounted(() => {
-  preLoader(photoList, () => {
-    console.log('图片加载好了');
-  });
-  demo1.value.map((it: HTMLElement) => {
-    console.log(it.getBoundingClientRect());
-    console.log('lazyLoader', lazyLoader(it));
-  });
-});
-
+]);
 const demo1 = ref();
 const demo2 = ref();
+
+onMounted(() => {
+  preLoader(photoList.value, () => {
+    console.log('图片加载好了');
+  });
+  checkImages(demo1.value);
+  window.addEventListener(
+    'scroll',
+    throttle(() => checkImages(demo1.value), 500)
+  );
+});
+
+onUnmounted(() => {
+  window.removeEventListener(
+    'scroll',
+    throttle(() => checkImages(demo1.value), 500)
+  );
+});
 
 function open() {
   drawer.value = true;
@@ -96,5 +106,22 @@ img {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+.border-loader {
+  border: 5px solid #e5e5e5;
+  border-top: 5px solid rgba(255, 103, 104, 1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  animation: turn-around 1.5s linear infinite;
+}
+@keyframes turn-around {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

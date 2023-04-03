@@ -2,8 +2,6 @@ export function lazyLoader(element: HTMLElement) {
   const viewWidth = document.documentElement.clientWidth || window.innerWidth;
   const viewHeight =
     document.documentElement.clientHeight || window.innerHeight;
-  console.log('viewWidth', viewWidth);
-  console.log('viewHeight', viewHeight);
   const { top, right, bottom, left } = element.getBoundingClientRect();
   const positionDom = isAncestorPositioned(element);
   if (positionDom !== null) {
@@ -30,9 +28,6 @@ export function lazyLoader(element: HTMLElement) {
 
 function isAncestorPositioned(element: HTMLElement): HTMLElement | null {
   let ancestor = element.parentElement;
-  /** inline-style
-  console.log('style', ancestor.style);
-   */
   while (ancestor && ancestor !== document.body) {
     if (window.getComputedStyle(ancestor).position !== 'static') {
       if (ancestor.contains(element)) {
@@ -43,4 +38,18 @@ function isAncestorPositioned(element: HTMLElement): HTMLElement | null {
     }
   }
   return null;
+}
+
+export function checkImages(imageRef: HTMLImageElement[]) {
+  imageRef.map((it: HTMLImageElement) => {
+    it.setAttribute('image-visible', String(lazyLoader(it)));
+    if (it.getAttribute('image-visible') === 'false') {
+      it.removeAttribute('src');
+    } else {
+      //src重新赋值，浏览器不会重复发起请求
+      if (!it.src) {
+        it.src = it.getAttribute('data-src') as string;
+      }
+    }
+  });
 }
