@@ -44,12 +44,10 @@ export function checkImages(imageRef: HTMLImageElement[]) {
   imageRef.map((it: HTMLImageElement) => {
     it.setAttribute('image-visible', String(lazyLoader(it)));
     if (it.getAttribute('image-visible') === 'false') {
-      it.removeAttribute('src');
+      it.src = '';
     } else {
       //src重新赋值，浏览器不会重复发起请求
-      if (!it.src) {
-        it.src = it.getAttribute('data-src') as string;
-      }
+      it.src = it.getAttribute('data-src') as string;
     }
   });
 }
