@@ -5,22 +5,13 @@ export function lazyLoader(element: HTMLElement) {
   const { top, right, bottom, left } = element.getBoundingClientRect();
   const positionDom = isAncestorPositioned(element);
   if (positionDom !== null) {
-    const pRight = parseInt(window.getComputedStyle(positionDom).right);
-    const pTop = parseInt(window.getComputedStyle(positionDom).top);
-    const pLeft = parseInt(window.getComputedStyle(positionDom).left);
-    const pBottom = parseInt(window.getComputedStyle(positionDom).bottom);
-    console.log('position', { pRight, pTop, pLeft, pBottom });
-    console.log('1', pTop + top <= viewHeight);
-    return (
-      pTop + top >= 0 &&
-      pTop + top <= viewHeight &&
-      pLeft >= 0 &&
-      pLeft <= viewWidth &&
-      pBottom + bottom >= 0 &&
-      pBottom + bottom <= viewHeight &&
-      pRight >= 0 &&
-      pRight <= viewWidth
-    );
+    //position:absolute相对于遮罩层情况
+    console.log('layout', { right, top, left, bottom });
+    return top >= 0 && bottom <= viewHeight && left > viewWidth
+      ? left - viewWidth >= 0
+      : left >= 0 && bottom <= viewHeight && right > viewWidth
+      ? right - viewWidth <= viewWidth
+      : right <= viewWidth;
   } else {
     return top >= 0 && left >= 0 && bottom <= viewHeight && right <= viewWidth;
   }
@@ -40,8 +31,47 @@ function isAncestorPositioned(element: HTMLElement): HTMLElement | null {
   return null;
 }
 
+function isAncestorFixed(element: HTMLElement): HTMLElement | null {
+  let ancestor = element.parentElement;
+  while (ancestor && ancestor !== document.body) {
+    if (window.getComputedStyle(ancestor).position === 'fixed') {
+      if (ancestor.contains(element)) {
+        return ancestor;
+      }
+    } else {
+      ancestor = ancestor.parentElement;
+    }
+  }
+  return null;
+}
+
+function getElementMargin(element: HTMLElement) {
+  const mt = element.style.marginTop;
+  const mr = element.style.marginLeft;
+  const mb = element.style.marginBottom;
+  const ml = element.style.marginLeft;
+  return { mt, mr, mb, ml };
+}
+
+function getElementPadding(element: HTMLElement) {
+  const pt = element.style.paddingTop;
+  const pr = element.style.paddingRight;
+  const pb = element.style.paddingBottom;
+  const pl = element.style.paddingLeft;
+  return { pt, pr, pb, pl };
+}
+
+function getElementBorder(element: HTMLElement) {
+  const bt = element.style.borderRight;
+  const br = element.style.borderRight;
+  const bb = element.style.borderBottom;
+  const bl = element.style.borderLeft;
+  return { bt, br, bb, bl };
+}
+
 export function checkImages(imageRef: HTMLImageElement[]) {
   imageRef.map((it: HTMLImageElement) => {
+    console.log('it', it);
     it.setAttribute('image-visible', String(lazyLoader(it)));
     if (it.getAttribute('image-visible') === 'false') {
       it.src = '';

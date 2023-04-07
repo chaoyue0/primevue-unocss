@@ -1,6 +1,6 @@
 <template>
   <h1>photo optimization</h1>
-  <el-button @click="open">打开抽屉</el-button>
+  <el-button @click="doOpen">打开抽屉</el-button>
   <div class="flex-column">
     <img
       v-for="img in photoList"
@@ -12,14 +12,17 @@
     />
     <div class="border-loader"></div>
   </div>
-  <el-drawer v-model="drawer">
-    <img
-      v-for="img in photoList"
-      ref="demo2"
-      :key="img"
-      :src="img"
-      alt="loading"
-    />
+  <el-drawer ref="drawerRef" v-model="drawer" @close="doClose">
+    <div ref="scrollContainer" class="flex-column">
+      <img
+        v-for="img in photoList"
+        ref="demo2"
+        :key="img"
+        src=""
+        :data-src="img"
+        alt="loading"
+      />
+    </div>
   </el-drawer>
 </template>
 
@@ -43,7 +46,7 @@ import test4 from '@/assets/testPreload/test4.jpg';
 import test3 from '@/assets/testPreload/test3.jpg';
 import test2 from '@/assets/testPreload/test2.jpg';
 import test1 from '@/assets/testPreload/test1.jpg';
-import { lazyLoader, checkImages } from '@/libs/lazyLoader';
+import { checkImages } from '@/libs/lazyLoader';
 import { throttle } from '@/libs/throttle';
 
 const drawer = ref(false);
@@ -87,14 +90,31 @@ onUnmounted(() => {
   );
 });
 
-function open() {
+const drawerRef = ref();
+const scrollContainer = ref();
+function doOpen() {
   drawer.value = true;
-  nextTick(() => {
-    demo2.value.map((it: HTMLElement) => {
-      console.log(it.getBoundingClientRect());
-      console.log('lazyLoader', lazyLoader(it));
-    });
+  drawerRef.value.$nextTick(() => {
+    checkImages(demo2.value);
+    scrollContainer.value.addEventListener(
+      'scroll',
+      throttle(() => checkImages(demo2.value), 500)
+    );
+    console.log('scrollContainer', scrollContainer.value);
   });
+  nextTick(() => {
+    drawerRef.value.addEventListener(
+      'scroll',
+      throttle(() => checkImages(demo2.value), 500)
+    );
+  });
+}
+
+function doClose() {
+  scrollContainer.value.removeEventListener(
+    'scroll',
+    throttle(() => checkImages(demo2.value), 500)
+  );
 }
 </script>
 
