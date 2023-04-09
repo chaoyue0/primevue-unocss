@@ -1,8 +1,12 @@
 <template>
-  <h1>解析URL提取params参数</h1>
-  <h1 class="g-m10">解析URL提取params参数</h1>
+  <div class="g-center">
+    <h1>input组件</h1>
+    <label-input></label-input>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LabelInput from '@/components/input/LabelInput.vue';
+</script>
 
 <style scoped></style>
