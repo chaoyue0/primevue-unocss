@@ -2,12 +2,15 @@
   <div class="input-box">
     <input
       ref="inputRef"
-      v-model="inputValue"
-      placeholder="提示性的文字"
+      :value="props.modelValue"
+      :placeholder="props.placeholder"
       class="g-pt2 g-pl1 g-pb2 g-pr1"
       :style="{ width: props.width }"
+      @input="$emit('update:modelValue', $event.target.value)"
+      @focus="handleFocus"
+      @blur="handleBlur"
     />
-    <label>{{ text }}</label>
+    <label ref="labelRef">{{ text }}</label>
   </div>
 </template>
 
@@ -15,25 +18,35 @@
 import { ref, nextTick } from 'vue';
 const props = withDefaults(
   defineProps<{
-    labelPosition?: 'left' | 'right' | 'center';
     width?: number | string;
     height?: number | string;
+    modelValue?: string;
+    placeholder?: string;
   }>(),
   {
-    labelPosition: 'left',
+    modelValue: '',
     width: 300 + 'px',
     height: 50 + 'px',
+    placeholder: '提示性的文字',
   }
 );
-const inputValue = ref('');
+defineEmits(['update:modelValue']);
 
 const inputRef = ref();
+const labelRef = ref();
 const text = ref('');
 nextTick(() => {
   text.value = inputRef.value.placeholder;
   inputRef.value.removeAttribute('placeholder');
-  console.log('text', text);
 });
+function handleFocus() {
+  labelRef.value.classList.add('focus');
+}
+function handleBlur() {
+  if (props.modelValue === '') {
+    labelRef.value.classList.remove('focus');
+  }
+}
 </script>
 
 <style scoped lang="scss">
@@ -52,7 +65,10 @@ input {
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075);
   border-radius: 5px;
 }
-input:focus + label {
+input:hover {
+  cursor: pointer;
+}
+.focus {
   position: absolute;
   left: 10px;
   top: 5px;
