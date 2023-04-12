@@ -1,0 +1,162 @@
+@mixin f-flex {
+  display: flex;
+}
+.f-flex {
+  @include f-flex;
+}
+//水平容器
+.f-main_left {
+  @include f-flex;
+  justify-content: flex-start;
+}
+.f-main_left__left {
+  @include f-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.f-main_left__center {
+  @include f-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.f-main_left__right {
+  @include f-flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.f-main_center {
+  @include f-flex;
+  justify-content: center;
+}
+.f-main_center__left {
+  @include f-flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.f-main_center__center {
+  @include f-flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-main_center_-right {
+  @include f-flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.f-main_right {
+  @include f-flex;
+  justify-content: flex-end;
+}
+.f-main_right__left {
+  @include f-flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.f-main_right__center {
+  @include f-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.f-main_right_right {
+  @include f-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.f-main_between {
+  @include f-flex;
+  justify-content: space-between;
+}
+.f-main_around {
+  @include f-flex;
+  justify-content: space-around;
+}
+
+//垂直容器
+.f-cross_left {
+  @include f-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.f-cross_center {
+  @include f-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.f-cross_right {
+  @include f-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.f-cross_between {
+  @include f-flex;
+  justify-content: space-between;
+}
+.f-cross_around {
+  @include f-flex;
+  justify-content: space-around;
+}
+
+.f-all_center {
+  @include f-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//容器交叉轴
+.f-align_left {
+  align-items: flex-start;
+}
+.f-align_center {
+  align-items: center;
+}
+.f-align_right {
+  align-items: flex-end;
+}
+
+//容器换行
+.f-wrap_yes {
+  @include f-flex;
+  flex-wrap: wrap;
+}
+.f-wrap_no {
+  @include f-flex;
+  flex-wrap: nowrap;
+}
+
+//容器多行项目对齐方式
+.f-multi_left {
+  @include f-flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.f-multi_center {
+  @include f-flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.f-multi_right {
+  @include f-flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+//项目占比
+@for $i from 1 through 10 {
+  .f-proportion#{$i} {
+    flex: $i;
+  }
+}
+
+//交叉轴项目对齐方式
+.f-special_left {
+  align-self: flex-start;
+}
+.f-special_center {
+  align-self: center;
+}
+.f-special_right {
+  align-self: flex-end;
+}

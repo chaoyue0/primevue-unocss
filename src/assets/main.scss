@@ -1,4 +1,5 @@
-@import "mixin";
+@import "./mixin.scss";
+@import "flex/flex.scss";
 :root {
   --wg-navbar-height : 40px;
   --wg-box-wrapper-pad : 10px;
@@ -88,6 +89,12 @@ a {
   vertical-align: bottom;
 }
 
+.g-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .wg-wid-full{
   width: 100%;
 }
