@@ -20,8 +20,8 @@
 //position
 @mixin ptl($p, $top, $left) {
   position: $p;
-  top: $top;
-  left: $left;
+  top: toPx($top);
+  left: toPx($left);
 }
 //height、line-height
 @mixin hh($height, $lineHeight) {

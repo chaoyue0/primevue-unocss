@@ -1,3 +1,4 @@
+@import "../mixin.scss";
 @mixin f-flex {
   display: flex;
 }
@@ -147,6 +148,13 @@
 @for $i from 1 through 10 {
   .f-proportion#{$i} {
     flex: $i;
+  }
+}
+
+//项目间隔
+@for $i from 1 through 10 {
+  .f-gap#{$i} {
+    gap: toPx($i * 10);
   }
 }
 
