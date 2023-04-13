@@ -18,6 +18,14 @@ export const routes: RouteRecordRaw[] = [
       menuGroup: MenuGroup.Test,
     },
   },
+  {
+    path: '/test3',
+    name: RouteName.TestPage3,
+    component: () => import('@/views/TestPageThree.vue'),
+    meta: {
+      menuGroup: MenuGroup.Test,
+    },
+  },
 ];
 
 export default routes;

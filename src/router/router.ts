@@ -7,6 +7,7 @@ export const RouteName = {
   Test: 'Test',
   TestPage1: 'TestPage1',
   TestPage2: 'TestPage2',
+  TestPage3: 'TestPage3',
   MockTest1: 'MockTest1',
   MockTest2: 'MockTest2',
 };
