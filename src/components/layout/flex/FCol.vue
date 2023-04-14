@@ -16,11 +16,12 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { eventBus } from '@/components/layout/flex/Mitt';
 const props = withDefaults(
   defineProps<{
-    span: number;
+    span?: number;
     alignX?: string;
     alignY?: string;
   }>(),
   {
+    span: 1,
     alignX: 'left',
     alignY: 'left',
   }
