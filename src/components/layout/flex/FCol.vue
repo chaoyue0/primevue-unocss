@@ -3,8 +3,8 @@
     :class="[
       'f-proportion' + props.span,
       'f-wrap_yes',
-      'f-main_' + props.alignX,
-      'f-align_' + props.alignY,
+      'f-main_' + isRowValue,
+      'f-align_' + isColValue,
     ]"
   >
     <slot></slot>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { eventBus } from '@/components/layout/flex/Mitt';
 const props = withDefaults(
   defineProps<{
@@ -26,17 +26,6 @@ const props = withDefaults(
   }
 );
 
-/**
- * @pending
-function isRowValue(s: string) {
-  if (s === 'left') {
-    return alignH.value;
-  } else {
-    return props.alignX;
-  }
-}
- */
-
 onMounted(() => {
   eventBus.on('alignH', (h: string) => (alignH.value = h));
   eventBus.on('alignV', (v: string) => (alignV.value = v));
@@ -49,6 +38,22 @@ onUnmounted(() => {
 
 const alignH = ref('');
 const alignV = ref('');
+
+const isRowValue = computed(() => {
+  if (props.alignX === 'left') {
+    return alignH.value;
+  } else {
+    return props.alignX;
+  }
+});
+
+const isColValue = computed(() => {
+  if (props.alignY === 'left') {
+    return alignV.value;
+  } else {
+    return props.alignY;
+  }
+});
 </script>
 
 <style scoped></style>

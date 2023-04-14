@@ -44,16 +44,20 @@
   <el-button @click="colAlign2Y = 'left'">项目左对齐</el-button>
   <el-button @click="colAlign2Y = 'center'">项目居中</el-button>
   <el-button @click="colAlign2Y = 'right'">项目右对齐</el-button>
-  <f-row align-h="center">
+  <f-row align-h="center" align-v="center">
     <f-col :span="section1" :align-x="colAlign1X" :align-y="colAlign1Y">
-      <span><strong>proportion one</strong></span>
+      <span>
+        <strong>proportion {{ section1 }}</strong>
+      </span>
       <span>dsjkajdkajksdjkajdskdjak</span>
       <span>dsjkajdkajksdjkajdskdjak</span>
       <span>dsjkajdkajksdjkajdskdjak</span>
     </f-col>
     <f-col :span="section2" :align-x="colAlign2X" :align-y="colAlign2Y">
       <div>
-        <span><strong>proportion nine</strong></span>
+        <span>
+          <strong>proportion {{ section2 }}</strong>
+        </span>
       </div>
     </f-col>
   </f-row>

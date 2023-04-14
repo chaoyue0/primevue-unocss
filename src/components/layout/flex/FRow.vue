@@ -1,5 +1,4 @@
 <template>
-  {{ props.alignH }}
   <div :class="['f-flex', props.gutter ? 'f-gap' + props.gutter : '']">
     <slot></slot>
   </div>
