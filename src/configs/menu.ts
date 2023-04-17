@@ -17,6 +17,11 @@ menus.push(
     index: MenuGroup.Home,
   },
   {
+    title: MenuGroup.Layout,
+    index: MenuGroup.Layout,
+    items: [],
+  },
+  {
     title: MenuGroup.Test,
     index: MenuGroup.Test,
     items: [],

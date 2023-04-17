@@ -29,4 +29,4 @@
 ### 测试方案
 
 ### 使用示例
-[f-row、f-col组件测试页面](/src/views/TestPageThree.vue)
+[f-row、f-col组件测试页面](/src/views/layout/FlexPage.vue)
