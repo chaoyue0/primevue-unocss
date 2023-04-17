@@ -1,0 +1,118 @@
+@import "../mixin.scss";
+$fix-value: 0;
+@mixin g-grid {
+  display: grid;
+}
+.g-grid {
+  @include g-grid;
+}
+//项目等分占比空间
+@for $n from 1 through 12 {
+  .g-col#{$n} {
+    @include g-grid;
+    grid-template-columns: repeat($n,1fr);
+  }
+}
+@for $n from 1 through 12 {
+  .g-row#{$n} {
+    @include g-grid;
+    grid-template-rows: repeat($n,1fr);
+  }
+}
+//项目部分固定，部分自适应占比空间
+@for $n from 1 through 12 {
+  .g-fix#{$n}_left {
+    @include g-grid;
+    grid-template-columns: $n * 100px auto;
+  }
+  .g-fix#{$n}_center {
+    @include g-grid;
+    grid-template-columns: auto $n * 100px auto;
+  }
+  .g-fix#{$n}_right {
+    @include g-grid;
+    grid-template-columns: auto $n * 100px;
+  }
+}
+.g-fix#{$fix-value}_left {
+  @include g-grid;
+  grid-template-columns: $fix-value auto;
+}
+.g-fix#{$fix-value}_center {
+  @include g-grid;
+  grid-template-columns: auto $fix-value auto;
+}
+.g-fix#{$fix-value}_right {
+  @include g-grid;
+  grid-template-columns: auto $fix-value;
+}
+//项目排列顺序，尽可能铺满
+.g-dense_row {
+  grid-auto-flow: row dense;
+}
+.g-dense_col {
+  grid-auto-flow: column dense;
+}
+//项目水平排列方式
+.g-row-items_start {
+  @include g-grid;
+  justify-items: start;
+}
+.g-row-items_center {
+  @include g-grid;
+  justify-items: center;
+}
+.g-row-items_end {
+  @include g-grid;
+  justify-items: end;
+}
+.g-row-content_start {
+  @include g-grid;
+  justify-content: start;
+}
+.g-row-content_center {
+  @include g-grid;
+  justify-content: center;
+}
+.g-row-content_end {
+  @include g-grid;
+  justify-content: end;
+}
+//项目垂直排列方式
+.g-col-items_start {
+  @include g-grid;
+  align-items: start;
+}
+.g-col-items_center {
+  @include g-grid;
+  align-items: center;
+}
+.g-col-items_end {
+  @include g-grid;
+  align-items: end;
+}
+.g-col-content_start {
+  @include g-grid;
+  align-content: start;
+}
+.g-col-content_center {
+  @include g-grid;
+  align-content: center;
+}
+.g-col-content_end {
+  @include g-grid;
+  align-content: end;
+}
+
+.g-all-start {
+  @include g-grid;
+  place-items: start;
+}
+.g-all-center {
+  @include g-grid;
+  place-items: center;
+}
+.g-all-end {
+  @include g-grid;
+  place-items: end;
+}
