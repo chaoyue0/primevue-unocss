@@ -6,66 +6,18 @@
   @include f-flex;
 }
 //水平容器
-.f-main_left {
+.f-main_start {
   @include f-flex;
   justify-content: flex-start;
 }
-.f-main_left__left {
-  @include f-flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.f-main_left__center {
-  @include f-flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.f-main_left__right {
-  @include f-flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-
 .f-main_center {
   @include f-flex;
   justify-content: center;
 }
-.f-main_center__left {
-  @include f-flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.f-main_center__center {
-  @include f-flex;
-  justify-content: center;
-  align-items: center;
-}
-.f-main_center_-right {
-  @include f-flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.f-main_right {
+.f-main_end {
   @include f-flex;
   justify-content: flex-end;
 }
-.f-main_right__left {
-  @include f-flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-.f-main_right__center {
-  @include f-flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.f-main_right_right {
-  @include f-flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
 .f-main_between {
   @include f-flex;
   justify-content: space-between;
@@ -76,7 +28,7 @@
 }
 
 //垂直容器
-.f-cross_left {
+.f-cross_start {
   @include f-flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -86,7 +38,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.f-cross_right {
+.f-cross_end {
   @include f-flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -102,18 +54,19 @@
 
 .f-all_center {
   @include f-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 //容器交叉轴
-.f-align_left {
+.f-align_start {
   align-items: flex-start;
 }
 .f-align_center {
   align-items: center;
 }
-.f-align_right {
+.f-align_end {
   align-items: flex-end;
 }
 
@@ -128,7 +81,7 @@
 }
 
 //容器多行项目对齐方式
-.f-multi_left {
+.f-multi_start {
   @include f-flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -138,7 +91,7 @@
   flex-wrap: wrap;
   align-content: center;
 }
-.f-multi_right {
+.f-multi_end {
   @include f-flex;
   flex-wrap: wrap;
   align-content: flex-end;
@@ -159,12 +112,12 @@
 }
 
 //交叉轴项目对齐方式
-.f-special_left {
+.f-special_start {
   align-self: flex-start;
 }
 .f-special_center {
   align-self: center;
 }
-.f-special_right {
+.f-special_end {
   align-self: flex-end;
 }
