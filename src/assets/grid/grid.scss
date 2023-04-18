@@ -1,25 +1,21 @@
 @import "../mixin.scss";
-$fix-value: 0;
 @mixin g-grid {
   display: grid;
 }
 .g-grid {
+  --fix-left-value: 0;
+  --fix-center-value: 0;
+  --fix-right-value: 0;
   @include g-grid;
 }
-//项目等分占比空间
+//容器属性：项目占比空间几等分
 @for $n from 1 through 12 {
   .g-col#{$n} {
     @include g-grid;
     grid-template-columns: repeat($n,1fr);
   }
 }
-@for $n from 1 through 12 {
-  .g-row#{$n} {
-    @include g-grid;
-    grid-template-rows: repeat($n,1fr);
-  }
-}
-//项目部分固定，部分自适应占比空间
+//容器属性：项目部分固定，部分自适应占比空间
 @for $n from 1 through 12 {
   .g-fix#{$n}_left {
     @include g-grid;
@@ -34,26 +30,26 @@ $fix-value: 0;
     grid-template-columns: auto $n * 100px;
   }
 }
-.g-fix#{$fix-value}_left {
+.g-fix_left {
   @include g-grid;
-  grid-template-columns: $fix-value auto;
+  grid-template-columns: var(--fix-left-value) auto;
 }
-.g-fix#{$fix-value}_center {
+.g-fix_center {
   @include g-grid;
-  grid-template-columns: auto $fix-value auto;
+  grid-template-columns: auto var(--fix-center-value) auto;
 }
-.g-fix#{$fix-value}_right {
+.g-fix_right {
   @include g-grid;
-  grid-template-columns: auto $fix-value;
+  grid-template-columns: auto var(--fix-right-value);
 }
-//项目排列顺序，尽可能铺满
+//容器属性：项目排列顺序，尽可能铺满
 .g-dense_row {
   grid-auto-flow: row dense;
 }
 .g-dense_col {
   grid-auto-flow: column dense;
 }
-//项目水平排列方式
+//容器属性：项目水平排列方式
 .g-row-items_start {
   @include g-grid;
   justify-items: start;
@@ -78,7 +74,7 @@ $fix-value: 0;
   @include g-grid;
   justify-content: end;
 }
-//项目垂直排列方式
+//容器属性：项目垂直排列方式
 .g-col-items_start {
   @include g-grid;
   align-items: start;
@@ -104,15 +100,46 @@ $fix-value: 0;
   align-content: end;
 }
 
-.g-all-start {
+.g-all_start {
   @include g-grid;
   place-items: start;
 }
-.g-all-center {
+.g-all_center {
   @include g-grid;
   place-items: center;
 }
-.g-all-end {
+.g-all_end {
   @include g-grid;
   place-items: end;
+}
+//项目属性：项目合并空间
+@for $n from 1 through 12 {
+  .g-col_span#{$n} {
+    grid-column-start: span $n;
+  }
+}
+@for $n from 1 through 12 {
+  .g-row_span#{$n} {
+    grid-row-start: span $n;
+  }
+}
+//项目属性：项目内容排列方式
+.g-row-self_start {
+  justify-self: start;
+}
+.g-row-self_center {
+  justify-self: center;
+}
+.g-row-self_end {
+  justify-self: end;
+}
+
+.g-col-self_start {
+  align-self: start;
+}
+.g-col-self_center {
+  align-self: center;
+}
+.g-col-self_end {
+  align-self: end;
 }
