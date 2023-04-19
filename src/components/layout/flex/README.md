@@ -1,4 +1,4 @@
-## row-col组件设计文档
+## row-col(flex)组件设计文档
 ### 组件概述
 1、绘制响应式布局的页面，由行和列组成，f-row表示行，f-col表示列；
 
@@ -17,15 +17,15 @@
 | 属性名 | 说明            | 类型     | 默认值  |
 |-----|---------------|--------|------|
 | gutter | 一行各项目之间的距离    | number | 0    |
-| alignH | 一行所有项目的水平对齐方式 | string | left |
-| alignV | 一行所有项目的垂直对齐方式 | string | left |
+| alignH | 一行所有项目的水平对齐方式 | string | start |
+| alignV | 一行所有项目的垂直对齐方式 | string | start |
 
 #### Col Attributes
 | 属性名 | 说明                                     | 类型     | 默认值  |
 |-----|----------------------------------------|--------|------|
 | span | 项目占据空间的比例<br/>计算方式：单个span与所有列span之和的比例 | number | 1    |
-| alignX | 一列一个项目的水平对齐方式                          | string | left |
-| alignY | 一列一个项目的垂直对齐方式                          | string | left |
+| alignX | 一列一个项目的水平对齐方式                          | string | start |
+| alignY | 一列一个项目的垂直对齐方式                          | string | start |
 ### 测试方案
 
 ### 使用示例
