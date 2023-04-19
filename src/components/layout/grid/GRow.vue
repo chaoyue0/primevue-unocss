@@ -2,12 +2,12 @@
   <div
     :class="[
       'g-col' + props.col,
-      props.fixLeft === '0' ? '' : 'g-fix' + props.fixLeft + '_left',
-      props.fixCenter === '0' ? '' : 'g-fix' + props.fixCenter + '_center',
-      props.fixRight === '0' ? '' : 'g-fix' + props.fixRight + '_right',
-      props.fixLeftValue === '0' ? '' : 'g-fix_left',
-      props.fixCenterValue === '0' ? '' : 'g-fix_center',
-      props.fixRightValue === '0' ? '' : 'g-fix_right',
+      props.fixLeft === 0 ? '' : 'g-fix' + props.fixLeft + '_left',
+      props.fixCenter === 0 ? '' : 'g-fix' + props.fixCenter + '_center',
+      props.fixRight === 0 ? '' : 'g-fix' + props.fixRight + '_right',
+      props.fixLeftValue === 0 ? '' : 'g-fix_left',
+      props.fixCenterValue === 0 ? '' : 'g-fix_center',
+      props.fixRightValue === 0 ? '' : 'g-fix_right',
       props.rowDense ? 'g-dense_row' : '',
       props.colDense ? 'g-dense_col' : '',
       props.rowAlign === 'start' ? '' : 'g-row-items_' + props.rowAlign,
@@ -36,13 +36,13 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    col?: string;
-    fixLeft?: string;
-    fixCenter?: string;
-    fixRight?: string;
-    fixLeftValue?: string;
-    fixCenterValue?: string;
-    fixRightValue?: string;
+    col?: number;
+    fixLeft?: number;
+    fixCenter?: number;
+    fixRight?: number;
+    fixLeftValue?: number;
+    fixCenterValue?: number;
+    fixRightValue?: number;
     rowDense?: boolean;
     colDense?: boolean;
     rowAlign?: string;
@@ -52,13 +52,13 @@ const props = withDefaults(
     placeAlign?: string;
   }>(),
   {
-    col: '1',
-    fixLeft: '0',
-    fixCenter: '0',
-    fixRight: '0',
-    fixLeftValue: '0',
-    fixCenterValue: '0',
-    fixRightValue: '0',
+    col: 1,
+    fixLeft: 0,
+    fixCenter: 0,
+    fixRight: 0,
+    fixLeftValue: 0,
+    fixCenterValue: 0,
+    fixRightValue: 0,
     rowDense: false,
     colDense: false,
     rowAlign: 'start',
