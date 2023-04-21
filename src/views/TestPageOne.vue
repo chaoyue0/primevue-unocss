@@ -1,25 +1,45 @@
 <template>
-  <h1>实现一个flex的布局</h1>
-  <div class="box">
-    <div class="left">1</div>
-    <div class="center">2</div>
-    <div class="right">3</div>
+  <div>
+    <h1>margin and padding</h1>
+    <p>inline-element</p>
+    <el-input v-model="marginNum" placeholder="请输入margin值" clearable />
+    <el-input v-model="paddingNum" placeholder="请输入padding值" clearable />
+    <el-button @click="doReset">重置</el-button>
+    <el-button :class="dynamicMarginStyle()" @click="marginNum = 1">
+      element-margin-1
+    </el-button>
+    <el-button :class="dynamicMarginStyle()" @click="marginNum = 2">
+      element-margin-2
+    </el-button>
+    <el-button :class="dynamicPaddingStyle()" @click="paddingNum = 1">
+      element-padding-1
+    </el-button>
+    <el-button :class="dynamicPaddingStyle()" @click="paddingNum = 2">
+      element-padding-2
+    </el-button>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+const marginNum = ref<number>();
+const paddingNum = ref<number>();
 
-<style scoped>
-.box {
-  display: flex;
+function dynamicMarginStyle() {
+  if (marginNum.value) {
+    return 'g-m' + marginNum.value;
+  }
 }
-.left {
-  flex-grow: 1;
+function dynamicPaddingStyle() {
+  if (paddingNum.value) {
+    return 'g-p' + paddingNum.value;
+  }
 }
-.center {
-  flex-grow: 2;
+
+function doReset() {
+  marginNum.value = 0;
+  paddingNum.value = 0;
 }
-.right {
-  flex-grow: 1;
-}
-</style>
+</script>
+
+<style scoped></style>
