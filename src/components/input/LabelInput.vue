@@ -50,13 +50,12 @@ function handleBlur() {
 </script>
 
 <style scoped lang="scss">
+@import 'src/assets/mixin.scss';
 .input-box {
   position: relative;
 }
 label {
-  position: absolute;
-  left: 10px;
-  top: 20px;
+  @include ptl(absolute, 20, 10);
   pointer-events: none;
   font-size: 1rem;
 }
@@ -69,11 +68,9 @@ input:hover {
   cursor: pointer;
 }
 .focus {
-  position: absolute;
-  left: 10px;
-  top: 5px;
+  @include ptl(absolute, 5, 10);
   color: #b7b7b7;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.5em;
   pointer-events: none;
