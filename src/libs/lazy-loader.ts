@@ -6,12 +6,11 @@ export function lazyLoader(element: HTMLElement) {
   const positionDom = isAncestorPositioned(element);
   if (positionDom !== null) {
     //position:absolute相对于遮罩层情况
-    console.log('layout', { right, top, left, bottom });
-    return top >= 0 && bottom <= viewHeight && left > viewWidth
-      ? left - viewWidth >= 0
-      : left >= 0 && bottom <= viewHeight && right > viewWidth
-      ? right - viewWidth <= viewWidth
-      : right <= viewWidth;
+    const verticalVisible = top >= 0 && bottom <= viewHeight;
+    const horizontalVisible =
+      (left > viewWidth ? left - viewWidth >= 0 : left >= 0) &&
+      (right > viewWidth ? right - viewWidth <= viewWidth : right <= viewWidth);
+    return verticalVisible && horizontalVisible;
   } else {
     return top >= 0 && left >= 0 && bottom <= viewHeight && right <= viewWidth;
   }
