@@ -1,28 +1,17 @@
 <template>
-  <div class="g-all_center">
-    <h1>input组件</h1>
-    <label-input v-model="test" placeholder="label1"></label-input>
-    <label-input v-model="test2" placeholder="label2"></label-input>
-    <label-input v-model="test3"></label-input>
-  </div>
-  <div class="g-all_center">
-    <el-button @click="saveDemoFile">保存并下载</el-button>
-  </div>
+  <h1>float-input组件</h1>
+  <float-input v-model="test" placeholder="float1" />
+  <float-input v-model="test2" type="embed" placeholder="float2" />
+  <float-input v-model="test3" type="outside" placeholder="float3" />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import LabelInput from '@/components/input/LabelInput.vue';
-import { saveFile } from '@/libs/save-file';
+import FloatInput from '@/components/input/FloatInput.vue';
 
 const test = ref('');
 const test2 = ref('');
 const test3 = ref('');
-
-const file = new Blob();
-function saveDemoFile() {
-  saveFile(file, 'demo');
-}
 </script>
 
 <style scoped></style>
