@@ -22,6 +22,11 @@ menus.push(
     items: [],
   },
   {
+    title: MenuGroup.Input,
+    index: MenuGroup.Input,
+    items: [],
+  },
+  {
     title: MenuGroup.Test,
     index: MenuGroup.Test,
     items: [],

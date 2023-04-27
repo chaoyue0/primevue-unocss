@@ -32,10 +32,10 @@ const props = withDefaults(
     type: 'inside', //embed、outside
   }
 );
-const emit = defineEmits<{
+/*const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void;
-}>();
-//defineEmits(['update:modelValue']);
+}>();*/
+defineEmits(['update:modelValue']);
 
 const inputRef = ref();
 const labelRef = ref();

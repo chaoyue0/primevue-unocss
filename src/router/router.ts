@@ -9,6 +9,7 @@ export const RouteName = {
   TestPage2: 'TestPage2',
   FlexPage: 'FlexPage',
   GridPage: 'GridPage',
+  FloatInputPage: 'FloatInputPage',
   MockTest1: 'MockTest1',
   MockTest2: 'MockTest2',
 };
@@ -16,6 +17,7 @@ export const RouteName = {
 export const enum MenuGroup {
   Home = 'Home',
   Layout = 'Layout',
+  Input = 'Input',
   Test = 'Test',
   Mock = 'Mock',
 }

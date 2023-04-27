@@ -3,11 +3,11 @@ import { RouteName, MenuGroup } from '@/router/router';
 
 export const routes: RouteRecordRaw[] = [
   {
-    path: '/test1',
-    name: RouteName.TestPage1,
-    component: () => import('@/views/TestPageOne.vue'),
+    path: '/float-input',
+    name: RouteName.FloatInputPage,
+    component: () => import('@/views/input/FloatInputPage.vue'),
     meta: {
-      menuGroup: MenuGroup.Test,
+      menuGroup: MenuGroup.Input,
     },
   },
 ];
