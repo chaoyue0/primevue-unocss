@@ -11,15 +11,14 @@
   },
   "dependencies": {
     "element-plus": "^2.3.3",
+    "mitt": "~3.0.0",
     "pinia": "^2.0.21",
     "pnpm": "^7.18.2",
     "vue": "^3.2.38",
-    "vue-router": "^4.0.14",
-    "mitt": "~3.0.0"
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
-    "@types/node": "^16.11.56",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",

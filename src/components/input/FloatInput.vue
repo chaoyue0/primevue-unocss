@@ -86,7 +86,7 @@ function handleBlur(type: string) {
   display: inline-block;
 }
 .input-box + .input-box {
-  margin-left: 10px;
+  margin-left: var(--wg-element-margin);
 }
 input {
   border: 2px solid #ccc;

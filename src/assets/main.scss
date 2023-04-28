@@ -1,14 +1,7 @@
 @import "./mixin.scss";
 @import "flex/flex.scss";
 @import "grid/grid.scss";
-:root {
-  --wg-navbar-height : 40px;
-  --wg-box-wrapper-pad : 10px;
-  --wg-input-margin : 12px;
-  --wg-input-width : 200px;
-  --wg-form-item-width : 300px;
-  --wg-table-max-height: 400px;
-}
+@import "variables/layout_common.css";
 
 body {
   color:var(--el-text-color-regular);
