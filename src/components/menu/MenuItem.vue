@@ -16,7 +16,7 @@
     <img v-show="!isExpand" src="/src/assets/expand.svg" alt="expand-button" />
     <img v-show="isExpand" src="/src/assets/close.svg" alt="close-button" />
   </div>
-  <el-drawer v-model="isExpand" direction="ltr" :with-header="false">
+  <el-drawer v-model="isExpand" direction="ltr">
     <template v-for="item in menuStore.menu" :key="item">
       <div v-if="item.items" class="phone-menu-item cursor-pointer">
         {{ item.title }}
@@ -63,14 +63,19 @@ function changeBoard() {
 .sub-menu {
   display: none;
   position: absolute;
-  width: 100px;
+  width: 200px;
   top: 100px;
+  border: 0 solid rgba(31, 45, 61, 0);
+  box-shadow: 0 1.5rem 4rem rgba(31, 45, 61, 0.15);
   div {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
   }
+}
+a:hover {
+  color: rgba(0, 138, 255, 0.9);
 }
 .menu-item:hover .sub-menu {
   display: block;
