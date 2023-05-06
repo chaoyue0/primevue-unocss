@@ -1,0 +1,38 @@
+@import "../mixin.scss";
+
+//margin
+@for $n from 1 through 10 {
+  .l-m#{$n} {
+    margin: toPx(10 * $n);
+  }
+  .l-mt#{$n} {
+    margin-top: toPx(10 * $n);
+  }
+  .l-mr#{$n} {
+    margin-right: toPx(10 * $n);
+  }
+  .l-mb#{$n} {
+    margin-bottom: toPx(10 * $n);
+  }
+  .l-ml#{$n} {
+    margin-left: toPx(10 * $n);
+  }
+}
+//padding
+@for $n from 1 through 10 {
+  .l-p#{$n} {
+    padding: toPx(10 * $n);
+  }
+  .l-pt#{$n} {
+    padding-top: toPx(10 * $n);
+  }
+  .l-pr#{$n} {
+    padding-right: toPx(10 * $n);
+  }
+  .l-pb#{$n} {
+    padding-bottom: toPx(10 * $n);
+  }
+  .l-pl#{$n} {
+    padding-left: toPx(10 * $n);
+  }
+}
