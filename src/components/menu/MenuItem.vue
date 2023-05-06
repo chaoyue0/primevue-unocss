@@ -67,6 +67,7 @@ function changeBoard() {
   top: 100px;
   border: 0 solid rgba(31, 45, 61, 0);
   box-shadow: 0 1.5rem 4rem rgba(31, 45, 61, 0.15);
+  background-color: var(--wg-color-backgroud_white);
   div {
     display: flex;
     justify-content: center;

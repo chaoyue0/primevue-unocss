@@ -1,10 +1,12 @@
 <template>
   <menu-group>
     <template #logo>
-      <img src="/src/assets/logo.svg" alt="logo" />
+      <img src="/src/assets/logo.png" alt="logo" />
     </template>
   </menu-group>
-  <RouterView></RouterView>
+  <div class="l-board_main">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup lang="ts">

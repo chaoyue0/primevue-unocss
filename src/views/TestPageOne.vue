@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="l-board_sub">
     <h1>margin and padding</h1>
     <p>inline-element</p>
     <el-input v-model="marginNum" placeholder="请输入margin值" clearable />
@@ -27,12 +27,12 @@ const paddingNum = ref<number>();
 
 function dynamicMarginStyle() {
   if (marginNum.value) {
-    return 'g-m' + marginNum.value;
+    return 'l-m' + marginNum.value;
   }
 }
 function dynamicPaddingStyle() {
   if (paddingNum.value) {
-    return 'g-p' + paddingNum.value;
+    return 'l-p' + paddingNum.value;
   }
 }
 

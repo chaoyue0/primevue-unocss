@@ -48,11 +48,11 @@ nextTick(() => {
 function addClass(type: string) {
   switch (type) {
     case 'inside':
-      return 'g-p2';
+      return 'l-p2';
     case 'outside':
-      return 'g-p1';
+      return 'l-p1';
     case 'embed':
-      return 'g-p1';
+      return 'l-p1';
   }
 }
 

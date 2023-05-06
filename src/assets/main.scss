@@ -1,54 +1,20 @@
 @import "./mixin.scss";
 @import "flex/flex.scss";
 @import "grid/grid.scss";
-@import "variables/layout_common.css";
+@import "variables/layout_common.scss";
+@import "layout/layout.scss";
+@import "layout/dashboard.scss";
+@import "font/font-layout.scss";
+@import "color/color.scss";
 
 body {
   color:var(--el-text-color-regular);
   margin: 0;
   box-sizing: border-box;
-  background-color: #FFF;
 }
 
 a {
   text-decoration: none;
-}
-
-//margin
-@for $n from 1 through 10 {
-  .g-m#{$n} {
-    margin: toPx(10 * $n);
-  }
-  .g-mt#{$n} {
-    margin-top: toPx(10 * $n);
-  }
-  .g-mr#{$n} {
-    margin-right: toPx(10 * $n);
-  }
-  .g-mb#{$n} {
-    margin-bottom: toPx(10 * $n);
-  }
-  .g-ml#{$n} {
-    margin-left: toPx(10 * $n);
-  }
-}
-//padding
-@for $n from 1 through 10 {
-  .g-p#{$n} {
-    padding: toPx(10 * $n);
-  }
-  .g-pt#{$n} {
-    padding-top: toPx(10 * $n);
-  }
-  .g-pr#{$n} {
-    padding-right: toPx(10 * $n);
-  }
-  .g-pb#{$n} {
-    padding-bottom: toPx(10 * $n);
-  }
-  .g-pl#{$n} {
-    padding-left: toPx(10 * $n);
-  }
 }
 
 //user-select
@@ -63,26 +29,6 @@ a {
   -webkit-user-select: all;
   -ms-user-select: all;
   user-select: all;
-}
-
-//inline align
-.f-tl {
-  text-align: left;
-}
-.f-tc {
-  text-align: center;
-}
-.f-tr {
-  text-align: right;
-}
-.f-vt {
-  vertical-align: top;
-}
-.f-vm {
-  vertical-align: middle;
-}
-.f-vb {
-  vertical-align: bottom;
 }
 
 .wg-wid-full{

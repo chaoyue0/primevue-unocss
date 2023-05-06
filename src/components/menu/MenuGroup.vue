@@ -3,7 +3,7 @@
     <div class="logo">
       <slot name="logo"></slot>
     </div>
-    <div class="menu-group g-mr10">
+    <div class="menu-group l-mr10">
       <MenuItem></MenuItem>
     </div>
   </div>

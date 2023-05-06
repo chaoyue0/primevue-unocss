@@ -1,5 +1,5 @@
 <template>
-  <div class="g-center">
+  <div class="l-board_sub">
     <h1>photo optimization</h1>
     <el-button @click="doOpen">打开抽屉</el-button>
     <el-button @click="startListen">开启区域A事件监听</el-button>

@@ -1,0 +1,12 @@
+@import "../variables/layout_common.scss";
+
+.l-board_main {
+  padding: var(--wg-block-tb-padding) var(--wg-block-lr-padding);
+  background-color: var(--wg-color-backgroud);
+}
+.l-board_main .l-board_sub {
+  padding: var(--wg-block-sub-padding);
+  background-color: var(--wg-color-backgroud_white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  //filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); //成为一个独立的图层，该图层会覆盖在原始元素上方
+}
