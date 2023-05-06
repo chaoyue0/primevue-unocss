@@ -9,7 +9,7 @@
 
 ### 距离和尺寸
 
-[距离和尺寸相关全局变量](/src/assets/variables/layout_common.css)
+[距离和尺寸相关全局变量](/src/assets/variables/layout_common.scss)
 
 包括元素之间的距离、元素的宽度和高度等；
 
