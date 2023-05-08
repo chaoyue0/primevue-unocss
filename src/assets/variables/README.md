@@ -1,7 +1,12 @@
 ## 全局变量
 ### 颜色
 
+[颜色相关全局变量](/src/assets/variables/color.scss)
+
 包括主色调、背景色、边框颜色等；
+
+- 背景颜色(`--wg-color-background`)
+- 背景颜色白底(`--wg-color-background_white`)
 
 ### 字体
 

@@ -22,12 +22,12 @@
         {{ item.title }}
         <div class="phone-sub-item cursor-pointer">
           <div v-for="sub in item.items" :key="sub">
-            <RouterLink :to="sub.index">{{ sub.title }}</RouterLink>
+            <router-link :to="sub.index">{{ sub.title }}</router-link>
           </div>
         </div>
       </div>
       <div v-else class="phone-menu-item cursor-pointer">
-        <RouterLink :to="item.index"> {{ item.title }}</RouterLink>
+        <router-link :to="item.index"> {{ item.title }}</router-link>
       </div>
     </template>
   </el-drawer>
@@ -67,7 +67,7 @@ function changeBoard() {
   top: 100px;
   border: 0 solid rgba(31, 45, 61, 0);
   box-shadow: 0 1.5rem 4rem rgba(31, 45, 61, 0.15);
-  background-color: var(--wg-color-backgroud_white);
+  background-color: var(--wg-color-background_white);
   div {
     display: flex;
     justify-content: center;
