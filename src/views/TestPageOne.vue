@@ -17,11 +17,16 @@
     <el-button :class="dynamicPaddingStyle()" @click="paddingNum = 2">
       element-padding-2
     </el-button>
+    <br />
+    <base-button disabled @click="fun1">test1</base-button>
+    <base-button text @click="fun2">test2</base-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import BaseButton from '@/components/button/BaseButton.vue';
+
 const marginNum = ref<number>();
 const paddingNum = ref<number>();
 
@@ -39,6 +44,13 @@ function dynamicPaddingStyle() {
 function doReset() {
   marginNum.value = 0;
   paddingNum.value = 0;
+}
+
+function fun1() {
+  console.log('button1');
+}
+function fun2() {
+  console.log('button2');
 }
 </script>
 
