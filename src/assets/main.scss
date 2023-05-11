@@ -2,10 +2,12 @@
 @import "flex/flex.scss";
 @import "grid/grid.scss";
 @import "variables/layout_common.scss";
+@import "variables/border.scss";
 @import "layout/layout.scss";
 @import "layout/dashboard.scss";
 @import "font/font-layout.scss";
 @import "color/color.scss";
+@import "button/button.scss";
 
 body {
   color:var(--el-text-color-regular);
