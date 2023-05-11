@@ -1,0 +1,98 @@
+.b-button {
+  border: 1px solid var(--wg-color-button-border);
+  padding: 8px 15px;
+  font-size: 0.875rem;
+  border-radius: var(--wg-border-radius-base);
+  cursor: pointer;
+  background: #ffffff;
+}
+.b-button:hover:not(.b-click_disabled, .b-text, .b-type_primary, .b-type_success, .b-type_info, .b-type_warning, .b-type_danger) {
+  color: var(--wg-color-primary);
+  border-color: var(--wg-color-primary-light-7);
+  background-color: var(--wg-color-primary-light-9);
+  outline: 0;
+}
+//text
+.b-text {
+  border-color: transparent;
+  background: 0 0;
+  color: var(--wg-color-primary);
+  padding-left: 0;
+  padding-right: 0;
+}
+.b-text:hover {
+  color: var(--wg-color-primary-light-3);
+  border-color: transparent;
+  background-color: transparent;
+}
+//disabled
+.b-click_disabled {
+  cursor: not-allowed;
+}
+//size
+.b-size_lg {
+  padding: 12px 19px;
+}
+.b-size_sm {
+  padding: 5px 11px;
+}
+//type
+.b-type_primary {
+  background: var(--wg-color-primary);
+  color: var(--wg-color-white);
+}
+.b-type_primary:hover:not(.b-click_disabled, .b-text) {
+  border-color: var(--wg-color-primary-light-5);
+  background-color: var(--wg-color-primary-light-3);
+  outline: 0;
+}
+.b-type_primary:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #9dc1fb, 0 1px 2px 0 black;
+}
+.b-type_success {
+  background: var(--wg-color-success);
+  color: var(--wg-color-white);
+}
+.b-type_success:hover:not(.b-click_disabled, .b-text) {
+  border-color: var(--wg-color-success-light-5);
+  background-color: var(--wg-color-success-light-3);
+  outline: 0;
+}
+.b-type_info {
+  background: var(--wg-color-info);
+  color: var(--wg-color-white);
+}
+.b-type_info:hover:not(.b-click_disabled, .b-text) {
+  border-color: var(--wg-color-info-light-5);
+  background-color: var(--wg-color-info-light-3);
+  outline: 0;
+}
+.b-type_warning {
+  background: var(--wg-color-warning);
+  color: var(--wg-color-white);
+}
+.b-type_warning:hover:not(.b-click_disabled, .b-text) {
+  border-color: var(--wg-color-warning-light-5);
+  background-color: var(--wg-color-warning-light-3);
+  outline: 0;
+}
+.b-type_danger {
+  background: var(--wg-color-danger);
+  color: var(--wg-color-white);
+}
+.b-type_danger:hover:not(.b-click_disabled, .b-text) {
+  border-color: var(--wg-color-danger-light-5);
+  background-color: var(--wg-color-danger-light-3);
+  outline: 0;
+}
+//round
+.b-round {
+  border-radius: var(--wg-border-radius-round);
+}
+//circle
+.b-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--wg-border-radius-circle);
+  padding: 8px;
+}

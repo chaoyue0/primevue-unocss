@@ -5,21 +5,38 @@
     <el-input v-model="marginNum" placeholder="请输入margin值" clearable />
     <el-input v-model="paddingNum" placeholder="请输入padding值" clearable />
     <el-button @click="doReset">重置</el-button>
-    <el-button :class="dynamicMarginStyle()" @click="marginNum = 1">
+    <el-button
+      :class="dynamicMarginStyle()"
+      size="small"
+      @click="marginNum = 1"
+    >
       element-margin-1
     </el-button>
     <el-button :class="dynamicMarginStyle()" @click="marginNum = 2">
       element-margin-2
     </el-button>
-    <el-button :class="dynamicPaddingStyle()" @click="paddingNum = 1">
+    <el-button :class="dynamicPaddingStyle()" disabled @click="paddingNum = 1">
       element-padding-1
     </el-button>
-    <el-button :class="dynamicPaddingStyle()" @click="paddingNum = 2">
+    <el-button
+      type="text"
+      :class="dynamicPaddingStyle()"
+      @click="paddingNum = 2"
+    >
       element-padding-2
     </el-button>
     <br />
-    <base-button disabled @click="fun1">test1</base-button>
-    <base-button text @click="fun2">test2</base-button>
+    <base-button disabled @click="fun1">disabled</base-button>
+    <base-button text @click="fun2">text</base-button>
+    <base-button size="large" @click="fun2">large</base-button>
+    <base-button size="small" @click="fun2">small</base-button>
+    <base-button type="primary" @click="fun2">primary</base-button>
+    <base-button type="success" @click="fun2">success</base-button>
+    <base-button type="info" @click="fun2">info</base-button>
+    <base-button type="warning" @click="fun2">warning</base-button>
+    <base-button type="danger" @click="fun2">danger</base-button>
+    <base-button round @click="fun2">round</base-button>
+    <base-button circle @click="fun2"></base-button>
   </div>
 </template>
 
