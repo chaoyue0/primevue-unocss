@@ -3,10 +3,17 @@
 
 [颜色相关全局变量](/src/assets/variables/color.scss)
 
-包括主色调、背景色、边框颜色等；
+包括主色调、背景色、边框颜色、不同状态的颜色等；
 
+- 白色(`--wg-color-white`)
+- 黑色(`--wg-color-black`)
 - 背景颜色(`--wg-color-background`)
 - 背景颜色白底(`--wg-color-background_white`)
+- 主要状态颜色，以及不同级别淡化效果的同系色调(`--wg-color-primary`和`--wg-color-primary-light-X`)
+- 成功状态颜色，以及不同级别淡化效果的同系色调(`--wg-color-success`和`--wg-color-success-light-X`)
+- 信息状态颜色，以及不同级别淡化效果的同系色调(`--wg-color-info`和`--wg-color-info-light-X`)
+- 警示状态颜色，以及不同级别淡化效果的同系色调(`--wg-color-warning`和`--wg-color-warning-light-X`)
+- 危险状态颜色，以及不同级别淡化效果的同系色调(`--wg-color-danger`和`--wg-color-danger-light-X`)
 
 ### 字体
 
