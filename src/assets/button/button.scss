@@ -12,6 +12,13 @@
   background-color: var(--wg-color-primary-light-9);
   outline: 0;
 }
+.b-button:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-primary-light-3);
+}
+.b-button + .b-button {
+  margin-left: var(--wg-button-margin);
+}
+
 //text
 .b-text {
   border-color: transparent;
@@ -47,7 +54,7 @@
   outline: 0;
 }
 .b-type_primary:focus:not(.b-click_disabled, .b-text) {
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #9dc1fb, 0 1px 2px 0 black;
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-primary);
 }
 .b-type_success {
   background: var(--wg-color-success);
@@ -58,6 +65,9 @@
   background-color: var(--wg-color-success-light-3);
   outline: 0;
 }
+.b-type_success:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-success);
+}
 .b-type_info {
   background: var(--wg-color-info);
   color: var(--wg-color-white);
@@ -66,6 +76,9 @@
   border-color: var(--wg-color-info-light-5);
   background-color: var(--wg-color-info-light-3);
   outline: 0;
+}
+.b-type_info:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-info);
 }
 .b-type_warning {
   background: var(--wg-color-warning);
@@ -76,6 +89,9 @@
   background-color: var(--wg-color-warning-light-3);
   outline: 0;
 }
+.b-type_warning:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-warning);
+}
 .b-type_danger {
   background: var(--wg-color-danger);
   color: var(--wg-color-white);
@@ -84,6 +100,9 @@
   border-color: var(--wg-color-danger-light-5);
   background-color: var(--wg-color-danger-light-3);
   outline: 0;
+}
+.b-type_danger:focus:not(.b-click_disabled, .b-text) {
+  box-shadow: 0 0 0 2px var(--wg-color-white), 0 0 0 var(--wg-button-margin) var(--wg-color-danger);
 }
 //round
 .b-round {
