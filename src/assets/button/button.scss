@@ -5,6 +5,27 @@
   border-radius: var(--wg-border-radius-base);
   cursor: pointer;
   background: #ffffff;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover:not(.b-click_disabled) {
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.6s ease-in-out;
+    }
+  }
 }
 .b-button:hover:not(.b-click_disabled, .b-text, .b-type_primary, .b-type_success, .b-type_info, .b-type_warning, .b-type_danger) {
   color: var(--wg-color-primary);
