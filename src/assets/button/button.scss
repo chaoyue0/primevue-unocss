@@ -1,13 +1,15 @@
 .b-button {
-  border: 1px solid var(--wg-color-button-border);
+  display: inline-flex;
+  align-items: center;
   padding: 8px 15px;
-  font-size: 0.875rem;
+  position: relative;
+  border: 1px solid var(--wg-color-button-border);
   border-radius: var(--wg-border-radius-base);
+  overflow: hidden;
+  font-size: 0.875rem;
   cursor: pointer;
   background: #ffffff;
   transition: all 0.2s ease-in-out;
-  position: relative;
-  overflow: hidden;
   &:before {
     content: "";
     background-color: rgba(255,255,255,0.5);
@@ -135,4 +137,37 @@
   height: 32px;
   border-radius: var(--wg-border-radius-circle);
   padding: 8px;
+}
+//badge
+.b-badge {
+  min-width: .85rem;
+  margin-left: .5rem;
+  padding: 2px;
+  border-radius: var(--wg-border-radius-circle);
+  font-size: .75rem;
+  font-weight: 700;
+}
+.b-badge_primary {
+  color: var(--wg-color-primary);
+  background-color: var(--wg-color-white);
+}
+.b-badge_info {
+  color: var(--wg-color-info);
+  background-color: var(--wg-color-white);
+}
+.b-badge_success {
+  color: var(--wg-color-success);
+  background-color: var(--wg-color-white);
+}
+.b-badge_warning {
+  color: var(--wg-color-warning);
+  background-color: var(--wg-color-white);
+}
+.b-badge_danger {
+  color: var(--wg-color-danger);
+  background-color: var(--wg-color-white);
+}
+.b-badge_alert {
+  color: var(--wg-color-white);
+  background-color: var(--wg-color-badge_danger);
 }
