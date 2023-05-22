@@ -4,7 +4,7 @@
 #### l-board_main className
 表示主容器的样式，且包含padding和background-color
 
-#### l-board_sub className
+#### card className
 表示主容器内容的样式，包含padding和background-color(白底)，且必须作为`l-board_main`的子级
 
 ### margin、padding

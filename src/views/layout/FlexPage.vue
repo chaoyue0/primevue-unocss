@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>flex布局</h1>
     <p>水平方向</p>
     <el-button @click="alignX = 'start'">左对齐</el-button>

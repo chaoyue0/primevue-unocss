@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>grid布局</h1>
     <strong>划分单元格的列数</strong>
     <br />

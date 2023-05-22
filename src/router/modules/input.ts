@@ -10,6 +10,14 @@ export const routes: RouteRecordRaw[] = [
       menuGroup: MenuGroup.Input,
     },
   },
+  {
+    path: '/button-components',
+    name: RouteName.ButtonPage,
+    component: () => import('@/views/input/ButtonPage.vue'),
+    meta: {
+      menuGroup: MenuGroup.Input,
+    },
+  },
 ];
 
 export default routes;

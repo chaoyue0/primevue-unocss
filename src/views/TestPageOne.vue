@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>margin and padding</h1>
     <p>inline-element</p>
     <el-input v-model="marginNum" placeholder="请输入margin值" clearable />
@@ -25,24 +25,11 @@
     >
       element-padding-2
     </el-button>
-    <br />
-    <base-button disabled @click="fun1">disabled</base-button>
-    <base-button text @click="fun2">text</base-button>
-    <base-button size="large" @click="fun2">large</base-button>
-    <base-button size="small" @click="fun2">small</base-button>
-    <base-button type="primary" @click="fun2">primary</base-button>
-    <base-button type="success" @click="fun2">success</base-button>
-    <base-button type="info" @click="fun2">info</base-button>
-    <base-button type="warning" @click="fun2">warning</base-button>
-    <base-button type="danger" @click="fun2">danger</base-button>
-    <base-button round @click="fun2">round</base-button>
-    <base-button circle @click="fun2"></base-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import BaseButton from '@/components/button/BaseButton.vue';
 
 const marginNum = ref<number>();
 const paddingNum = ref<number>();
@@ -61,13 +48,6 @@ function dynamicPaddingStyle() {
 function doReset() {
   marginNum.value = 0;
   paddingNum.value = 0;
-}
-
-function fun1() {
-  console.log('button1');
-}
-function fun2() {
-  console.log('button2');
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>So what happened?</h1>
     <p>
       And remember, don't do anything that affects anything, unless it turns out

@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>float-input组件</h1>
     <float-input v-model="test" placeholder="float1" />
     <float-input v-model="test2" type="embed" placeholder="float2" />

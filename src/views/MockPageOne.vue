@@ -1,5 +1,5 @@
 <template>
-  <div class="l-board_sub">
+  <div class="card">
     <h1>hello world I am MockPage1</h1>
     <el-input
       v-model="column"

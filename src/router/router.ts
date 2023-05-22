@@ -10,6 +10,7 @@ export const RouteName = {
   FlexPage: 'FlexPage',
   GridPage: 'GridPage',
   FloatInputPage: 'FloatInputPage',
+  ButtonPage: 'ButtonPage',
   MockTest1: 'MockTest1',
   MockTest2: 'MockTest2',
 };
