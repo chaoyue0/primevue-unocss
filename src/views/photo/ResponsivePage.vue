@@ -61,6 +61,22 @@
       />
     </f-col>
   </f-row>
+  <h2>Picture</h2>
+  <picture>
+    <source
+      srcset="src/image/responsive/small_225.webp"
+      media="(max-width: 400px)"
+    />
+    <source
+      srcset="src/image/responsive/normal_300.webp"
+      media="(max-width: 900px)"
+    />
+    <source
+      srcset="src/image/responsive/large_600.webp"
+      media="(max-width: 1500px)"
+    />
+    <img src="src/image/responsive/normal_300.webp" />
+  </picture>
 </template>
 
 <script setup lang="ts">
