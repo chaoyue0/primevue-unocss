@@ -1,5 +1,11 @@
 <template>
-  <div :class="['f-flex', props.gutter ? 'f-gap' + props.gutter : '']">
+  <div
+    :class="[
+      'f-flex',
+      'f-wrap_yes',
+      props.gutter ? 'f-gap' + props.gutter : '',
+    ]"
+  >
     <slot></slot>
   </div>
 </template>
@@ -16,8 +22,8 @@ const props = withDefaults(
   }>(),
   {
     gutter: 0,
-    alignH: 'left',
-    alignV: 'left',
+    alignH: 'start',
+    alignV: 'start',
   }
 );
 

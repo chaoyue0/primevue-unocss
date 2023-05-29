@@ -2,7 +2,6 @@
   <div
     :class="[
       'f-proportion' + props.span,
-      'f-wrap_yes',
       'f-main_' + isRowValue,
       'f-align_' + isColValue,
     ]"
@@ -22,8 +21,8 @@ const props = withDefaults(
   }>(),
   {
     span: 1,
-    alignX: 'left',
-    alignY: 'left',
+    alignX: 'start',
+    alignY: 'start',
   }
 );
 
@@ -41,7 +40,7 @@ const alignH = ref('');
 const alignV = ref('');
 
 const isRowValue = computed(() => {
-  if (props.alignX === 'left') {
+  if (props.alignX === 'start') {
     return alignH.value;
   } else {
     return props.alignX;
@@ -49,7 +48,7 @@ const isRowValue = computed(() => {
 });
 
 const isColValue = computed(() => {
-  if (props.alignY === 'left') {
+  if (props.alignY === 'start') {
     return alignV.value;
   } else {
     return props.alignY;
