@@ -11,6 +11,8 @@ export const RouteName = {
   GridPage: 'GridPage',
   FloatInputPage: 'FloatInputPage',
   ButtonPage: 'ButtonPage',
+  OptimizationPage: 'OptimizationPage',
+  ResponsivePage: 'ResponsivePage',
   MockTest1: 'MockTest1',
   MockTest2: 'MockTest2',
 };
@@ -19,6 +21,7 @@ export const enum MenuGroup {
   Home = 'Home',
   Layout = 'Layout',
   Input = 'Input',
+  Photo = 'Photo',
   Test = 'Test',
   Mock = 'Mock',
 }

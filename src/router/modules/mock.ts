@@ -10,14 +10,6 @@ export const routes: RouteRecordRaw[] = [
       menuGroup: MenuGroup.Mock,
     },
   },
-  {
-    path: '/mock2',
-    name: RouteName.MockTest2,
-    component: () => import('@/views/MockPageTwo.vue'),
-    meta: {
-      menuGroup: MenuGroup.Mock,
-    },
-  },
 ];
 
 export default routes;

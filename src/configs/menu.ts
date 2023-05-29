@@ -27,6 +27,11 @@ menus.push(
     items: [],
   },
   {
+    title: MenuGroup.Photo,
+    index: MenuGroup.Photo,
+    items: [],
+  },
+  {
     title: MenuGroup.Test,
     index: MenuGroup.Test,
     items: [],
