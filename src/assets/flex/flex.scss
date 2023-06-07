@@ -5,119 +5,151 @@
 .f-flex {
   @include f-flex;
 }
-//水平容器
-.f-main_start {
-  @include f-flex;
+
+//Flex Direction
+.f-direction_row {
+  flex-direction: row;
+}
+.f-direction_reverse {
+  flex-direction: row-reverse;
+}
+.f-direction_col {
+  flex-direction: column;
+}
+.f-direction_col-reverse {
+  flex-direction: column-reverse;
+}
+
+//Flex Wrap
+.f-wrap_yes {
+  flex-wrap: wrap;
+}
+.f-wrap_no {
+  flex-wrap: nowrap;
+}
+.f-wrap-reverse_yes {
+  flex-wrap: wrap-reverse;
+}
+
+//Flex Gap
+@for $i from 1 through 10 {
+  .f-gap-#{$i} {
+    gap: toPx(10 * $i);
+  }
+  .f-gap-row-#{$i} {
+    row-gap: toPx(10 * $i);
+  }
+  .f-gap-column-#{$i} {
+    column-gap: toPx(10 * $i);
+  }
+}
+
+//Flex
+@for $i from 1 through 10 {
+  .f-#{$i} {
+    flex: $i;
+  }
+}
+.f-auto {
+  flex: 1 1 auto;
+}
+.f-none {
+  flex: none;
+}
+
+//Flex Grow
+@for $i from 0 through 10 {
+  .f-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+//Flex Shrink
+@for $i from 0 through 10 {
+  .f-shrink-#{$i} {
+    flex-shrink: $i;
+  }
+}
+
+//Flex Order
+@for $i from 0 through 10 {
+  .f-order-#{$i} {
+    order: $i;
+  }
+}
+
+//Flex Justify Content
+.f-justify_start {
   justify-content: flex-start;
 }
-.f-main_center {
-  @include f-flex;
+.f-justify_center {
   justify-content: center;
 }
-.f-main_end {
-  @include f-flex;
+.f-justify_end {
   justify-content: flex-end;
 }
-.f-main_between {
-  @include f-flex;
+.f-justify_between {
   justify-content: space-between;
 }
-.f-main_around {
-  @include f-flex;
+.f-justify_around {
   justify-content: space-around;
 }
 
-//垂直容器
-.f-cross_start {
-  @include f-flex;
-  flex-direction: column;
-  justify-content: flex-start;
+//Flex Align Content
+.f-align-content_start {
+  align-content: flex-start;
 }
-.f-cross_center {
-  @include f-flex;
-  flex-direction: column;
-  justify-content: center;
+.f-align-content_center {
+  align-content: center;
 }
-.f-cross_end {
-  @include f-flex;
-  flex-direction: column;
-  justify-content: flex-end;
+.f-align-content_end {
+  align-content: flex-end;
 }
-.f-cross_between {
-  @include f-flex;
-  justify-content: space-between;
+.f-align-content_between {
+  align-content: space-between;
 }
-.f-cross_around {
-  @include f-flex;
-  justify-content: space-around;
+.f-align-content_around {
+  align-content: space-around;
 }
 
+//Flex Align Items
+.f-align-items_start {
+  align-items: flex-start;
+}
+.f-align-items_center {
+  align-items: center;
+}
+.f-align-items_end {
+  align-items: flex-end;
+}
+.f-align-items_stretch {
+  align-items: stretch;
+}
+.f-align-items_baseline {
+  align-items: baseline;
+}
+
+//Flex Align Self
+.f-align-self_start {
+  align-self: flex-start;
+}
+.f-align-self_center {
+  align-self: center;
+}
+.f-align-self_end {
+  align-self: flex-end;
+}
+.f-align-self_stretch {
+  align-self: stretch;
+}
+.f-align-self_baseline {
+  align-self: baseline;
+}
+
+//Flex Horizontal and vertical Center
 .f-all_center {
   @include f-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-//容器交叉轴
-.f-align_start {
-  align-items: flex-start;
-}
-.f-align_center {
-  align-items: center;
-}
-.f-align_end {
-  align-items: flex-end;
-}
-
-//容器换行
-.f-wrap_yes {
-  @include f-flex;
-  flex-wrap: wrap;
-}
-.f-wrap_no {
-  @include f-flex;
-  flex-wrap: nowrap;
-}
-
-//容器多行项目对齐方式
-.f-multi_start {
-  @include f-flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-.f-multi_center {
-  @include f-flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
-.f-multi_end {
-  @include f-flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-}
-
-//项目占比
-@for $i from 1 through 10 {
-  .f-proportion#{$i} {
-    flex: $i;
-  }
-}
-
-//项目间隔
-@for $i from 1 through 10 {
-  .f-gap#{$i} {
-    gap: toPx($i * 10);
-  }
-}
-
-//交叉轴项目对齐方式
-.f-special_start {
-  align-self: flex-start;
-}
-.f-special_center {
-  align-self: center;
-}
-.f-special_end {
-  align-self: flex-end;
 }
