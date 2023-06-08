@@ -10,18 +10,18 @@ import { computed } from 'vue';
 const props = withDefaults(
   defineProps<{
     span?: number | undefined;
-    order?: string | undefined;
-    grow?: string | undefined;
-    shrink?: string | undefined;
+    order?: number;
+    grow?: number;
+    shrink?: number;
     auto?: boolean;
     none?: boolean;
     alignSelf?: string;
   }>(),
   {
     span: undefined,
-    order: undefined,
-    grow: undefined,
-    shrink: undefined,
+    order: 0,
+    grow: 0,
+    shrink: 1,
     auto: false,
     none: false,
     alignSelf: 'start',

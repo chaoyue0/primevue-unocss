@@ -44,40 +44,6 @@
   }
 }
 
-//Flex
-@for $i from 1 through 10 {
-  .f-#{$i} {
-    flex: $i;
-  }
-}
-.f-auto {
-  flex: 1 1 auto;
-}
-.f-none {
-  flex: none;
-}
-
-//Flex Grow
-@for $i from 0 through 10 {
-  .f-grow-#{$i} {
-    flex-grow: $i;
-  }
-}
-
-//Flex Shrink
-@for $i from 0 through 10 {
-  .f-shrink-#{$i} {
-    flex-shrink: $i;
-  }
-}
-
-//Flex Order
-@for $i from 0 through 10 {
-  .f-order-#{$i} {
-    order: $i;
-  }
-}
-
 //Flex Justify Content
 .f-justify_start {
   justify-content: flex-start;
@@ -127,6 +93,41 @@
 }
 .f-align-items_baseline {
   align-items: baseline;
+}
+
+
+//Flex
+@for $i from 1 through 10 {
+  .f-#{$i} {
+    flex: $i;
+  }
+}
+.f-auto {
+  flex: 1 1 auto;
+}
+.f-none {
+  flex: none;
+}
+
+//Flex Grow
+@for $i from 0 through 10 {
+  .f-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+//Flex Shrink
+@for $i from 0 through 10 {
+  .f-shrink-#{$i} {
+    flex-shrink: $i;
+  }
+}
+
+//Flex Order
+@for $i from 0 through 10 {
+  .f-order-#{$i} {
+    order: $i;
+  }
 }
 
 //Flex Align Self

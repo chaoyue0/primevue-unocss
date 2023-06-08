@@ -14,13 +14,13 @@
       <f-col><div class="demo-box">8</div></f-col>
     </f-row>
     <br />
-    <f-row :wrap="false">
-      <f-col shrink="0"><div class="demo-box">1</div></f-col>
-      <f-col grow="2"><div class="demo-box">2</div></f-col>
-      <f-col><div class="demo-box">3</div></f-col>
+    <f-row justify="end">
+      <f-col><div class="demo-box">1</div></f-col>
+      <f-col><div class="demo-box">2</div></f-col>
+      <f-col align-self="center"><div class="demo-box-special">3</div></f-col>
       <f-col><div class="demo-box">4</div></f-col>
       <f-col><div class="demo-box">5</div></f-col>
-      <f-col><div class="demo-box">6</div></f-col>
+      <f-col align-self="end"><div class="demo-box-special">6</div></f-col>
       <f-col><div class="demo-box">7</div></f-col>
     </f-row>
   </div>
