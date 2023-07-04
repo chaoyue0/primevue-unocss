@@ -48,10 +48,22 @@
     <base-button :badge="66" round @click="fun2">round</base-button>
     <base-button :badge="99" @click="fun2">badge</base-button>
   </div>
+  <h2>DropdownButton</h2>
+  <div class="card">
+    <dropdown-button :search-num="1" :operation-num="0">
+      <template #search-1>1</template>
+    </dropdown-button>
+    <dropdown-button :search-num="1" :operation-num="2">
+      <template #search-1>1</template>
+      <template #operation-1>1</template>
+      <template #operation-2>2</template>
+    </dropdown-button>
+  </div>
 </template>
 
 <script setup lang="ts">
 import BaseButton from '@/components/button/BaseButton.vue';
+import DropdownButton from '@/components/button/DropdownButton.vue';
 
 function fun1() {
   console.log('button1');
