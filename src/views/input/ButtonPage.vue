@@ -50,14 +50,14 @@
   </div>
   <h2>DropdownButton</h2>
   <div class="card">
-    <dropdown-button :search-num="1" :operation-num="0">
+    <dropdown-button :search-num="1" :operation-num="-2">
       <template #search-1>1</template>
     </dropdown-button>
-    <dropdown-button :search-num="1" :operation-num="2">
+    <!--    <dropdown-button :search-num="1" :operation-num="2">
       <template #search-1>1</template>
       <template #operation-1>1</template>
       <template #operation-2>2</template>
-    </dropdown-button>
+    </dropdown-button>-->
   </div>
 </template>
 

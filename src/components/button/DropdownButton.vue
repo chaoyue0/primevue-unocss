@@ -1,16 +1,16 @@
 <template>
   <div class="drop-down-search">
-    <base-button v-show="props.searchNum !== 0" text>search</base-button>
-    <div class="search-bubble">
+    <base-button v-show="props.searchNum >= 0" text>search</base-button>
+    <div v-if="props.searchNum >= 0" class="search-bubble">
       <div v-for="item in props.searchNum" :key="item">
         <slot :name="'search-' + item"></slot>
       </div>
     </div>
   </div>
-  {{ props.operationNum !== 0 ? '|' : '' }}
+  {{ props.operationNum >= 0 ? '|' : '' }}
   <div class="drop-down-operation">
-    <base-button v-show="props.operationNum !== 0" text>operation</base-button>
-    <div class="operation-bubble">
+    <base-button v-show="props.operationNum >= 0" text>operation</base-button>
+    <div v-if="props.operationNum >= 0" class="operation-bubble">
       <div v-for="item in props.operationNum" :key="item">
         <slot :name="'operation-' + item"></slot>
       </div>
@@ -20,13 +20,33 @@
 
 <script setup lang="ts">
 import BaseButton from '@/components/button/BaseButton.vue';
+import { watch } from 'vue';
 
 const props = defineProps<{
-  searchNum?: number;
-  operationNum?: number;
+  searchNum: number;
+  operationNum: number;
   dividedNum?: number;
   area?: number;
 }>();
+
+watch(
+  [() => props.operationNum, () => props.searchNum],
+  ([operationNum], [searchNum]) => {
+    if (operationNum < 0) {
+      console.warn(
+        'current value：' +
+          operationNum +
+          '，operationNum value must be above 0'
+      );
+    }
+    if (searchNum && searchNum < 0) {
+      console.warn(
+        'current value：' + searchNum + '，searchNum value must be above 0'
+      );
+    }
+  },
+  { immediate: true }
+);
 
 function searchDivided(
   index: number,
