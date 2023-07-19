@@ -32,6 +32,10 @@ menus.push(
     items: [],
   },
   {
+    title: MenuGroup.Table,
+    index: MenuGroup.Table,
+  },
+  {
     title: MenuGroup.Test,
     index: MenuGroup.Test,
     items: [],

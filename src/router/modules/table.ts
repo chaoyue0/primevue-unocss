@@ -3,11 +3,11 @@ import { RouteName, MenuGroup } from '@/router/router';
 
 export const routes: RouteRecordRaw[] = [
   {
-    path: '/mock',
-    name: RouteName.MockTest1,
-    component: () => import('@/views/MockPageOne.vue'),
+    path: '/table',
+    name: RouteName.Table,
+    component: () => import('@/views/table/TablePage.vue'),
     meta: {
-      menuGroup: MenuGroup.Mock,
+      menuGroup: MenuGroup.Table,
     },
   },
 ];

@@ -4,6 +4,7 @@ import type { Component } from 'vue';
 export const RouteName = {
   MainView: 'MainView',
   Home: 'Home',
+  Table: 'TablePage',
   Test: 'Test',
   TestPage1: 'TestPage1',
   TestPage2: 'TestPage2',
@@ -22,6 +23,7 @@ export const enum MenuGroup {
   Layout = 'Layout',
   Input = 'Input',
   Photo = 'Photo',
+  Table = 'Table',
   Test = 'Test',
   Mock = 'Mock',
 }
