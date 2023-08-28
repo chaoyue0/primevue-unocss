@@ -3,7 +3,7 @@ import { MenuGroup } from '@/router/router';
 import { children } from '@/router';
 
 export interface MenuItem {
-  title: string;
+  label: string;
   index: string;
   icon?: string | Component;
   items?: MenuItem[];
@@ -13,35 +13,35 @@ export const menus: MenuItem[] = [];
 
 menus.push(
   {
-    title: MenuGroup.Home,
+    label: MenuGroup.Home,
     index: MenuGroup.Home,
   },
   {
-    title: MenuGroup.Layout,
+    label: MenuGroup.Layout,
     index: MenuGroup.Layout,
     items: [],
   },
   {
-    title: MenuGroup.Input,
+    label: MenuGroup.Input,
     index: MenuGroup.Input,
     items: [],
   },
   {
-    title: MenuGroup.Photo,
+    label: MenuGroup.Photo,
     index: MenuGroup.Photo,
     items: [],
   },
   {
-    title: MenuGroup.Table,
+    label: MenuGroup.Table,
     index: MenuGroup.Table,
   },
   {
-    title: MenuGroup.Test,
+    label: MenuGroup.Test,
     index: MenuGroup.Test,
     items: [],
   },
   {
-    title: MenuGroup.Mock,
+    label: MenuGroup.Mock,
     index: MenuGroup.Mock,
     items: [],
   }
@@ -52,16 +52,16 @@ for (const rt of children) {
   const rgp = rt.meta?.menuGroup;
   const rn = rt.name as string;
   if (rgp && rn) {
-    const top = menus.find((it: MenuItem) => it.title === rgp);
+    const top = menus.find((it: MenuItem) => it.label === rgp);
     if (!top) continue;
-    const sub = top.items?.find((it: MenuItem) => it.title === rn); //寻找menus中items属性是否为空
+    const sub = top.items?.find((it: MenuItem) => it.label === rn); //寻找menus中items属性是否为空
     if (sub) {
-      sub.title = rn;
+      sub.label = rn;
       sub.index = rt.path;
     } else {
       //判断menu中是否有items属性，没有则表示无子菜单
       if (top.items) {
-        top.items.push({ title: rn, index: rt.path });
+        top.items.push({ label: rn, index: rt.path });
       } else {
         top.index = rt.path;
       }

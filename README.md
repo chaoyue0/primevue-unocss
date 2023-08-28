@@ -1,3 +1,32 @@
+# 常用命令
+```
+# 此项目的包管理推荐顺序 pnpm > yarn1 > npm
+npm install -g pnpm
+
+# 初始安装 | npm install
+pnpm install
+
+# 本地代理 | npm run local
+pnpm local
+# 开发代理 | npm run serve
+pnpm serve
+
+# 编译打包 | npm run build
+pnpm build
+
+# 此项目使用nvm工具管理node的版本
+nvm ls 查看已安装的node列表
+nvm install latest 安装最新的node版本
+nvm install x.x.x 安装指定的node版本
+nvm use x.x.x 切换成指定的node版本
+
+安装缓慢：
+nvm默认node镜像源是https://nodejs.org/dist，从默认镜像源下载会比较慢，导致卡住
+
+解决方案：
+替换成淘宝镜像源：NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install x.x.x（xxx表示具体的版本号）
+```
+
 # 编码约定
 
 ## 1、属性书写顺序

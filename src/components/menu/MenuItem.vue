@@ -1,15 +1,15 @@
 <template>
   <template v-for="item in menuStore.menu" :key="item">
     <div v-if="item.items" class="menu-item cursor-pointer">
-      {{ item.title }}
+      {{ item.label }}
       <div class="sub-menu cursor-pointer">
         <div v-for="sub in item.items" :key="sub">
-          <RouterLink :to="sub.index">{{ sub.title }}</RouterLink>
+          <RouterLink :to="sub.index">{{ sub.label }}</RouterLink>
         </div>
       </div>
     </div>
     <div v-else class="menu-item cursor-pointer">
-      <RouterLink :to="item.index"> {{ item.title }}</RouterLink>
+      <RouterLink :to="item.index"> {{ item.label }}</RouterLink>
     </div>
   </template>
   <div class="phone-item cursor-pointer" @click="changeBoard">
@@ -19,15 +19,15 @@
   <el-drawer v-model="isExpand" direction="ltr">
     <template v-for="item in menuStore.menu" :key="item">
       <div v-if="item.items" class="phone-menu-item cursor-pointer">
-        {{ item.title }}
+        {{ item.label }}
         <div class="phone-sub-item cursor-pointer">
           <div v-for="sub in item.items" :key="sub">
-            <router-link :to="sub.index">{{ sub.title }}</router-link>
+            <router-link :to="sub.index">{{ sub.label }}</router-link>
           </div>
         </div>
       </div>
       <div v-else class="phone-menu-item cursor-pointer">
-        <router-link :to="item.index"> {{ item.title }}</router-link>
+        <router-link :to="item.index"> {{ item.label }}</router-link>
       </div>
     </template>
   </el-drawer>
