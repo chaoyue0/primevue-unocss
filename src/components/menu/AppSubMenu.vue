@@ -4,7 +4,7 @@
       <li :class="[hoverIndex === index ? 'menu-list-color_hover' : '']">
         <router-link
           v-if="!item.items"
-          to=""
+          :to="item.index"
           @click="onMenuItemClick($event, item, index)"
           @mouseenter="onMenuItemMouseEnter(index)"
         >
@@ -12,8 +12,13 @@
           <span>{{ item.label }}</span>
           <i
             v-if="item.items"
-            class="pi pi-fw pi-chevron-down menu-i-arrow"
-          ></i>
+            :class="[
+              'menu-list-arrow',
+              hoverIndex === index ? 'menu-list-color_hover' : '',
+            ]"
+          >
+            <arrow-down></arrow-down>
+          </i>
         </router-link>
         <a
           v-else
@@ -24,11 +29,15 @@
           <span>{{ item.label }}</span>
           <i
             v-if="item.items"
-            class="pi pi-fw pi-chevron-down menu-i-arrow"
-            :class="[activeIndex === index ? 'menu-i-arrow_rotate' : '']"
-          ></i>
+            :class="[
+              'menu-list-arrow',
+              hoverIndex === index ? 'menu-list-color_hover' : '',
+            ]"
+          >
+            <arrow-down></arrow-down>
+          </i>
         </a>
-        <transition name="layout-menu">
+        <transition name="menu-list">
           <app-sub-menu
             v-show="activeIndex === index"
             :items="item.items ? item.items : []"
@@ -43,7 +52,7 @@
 import AppSubMenu from '@/components/menu/AppSubMenu.vue';
 import { ref } from 'vue';
 import { type MenuItem } from '@/configs/menu';
-import DropDown from '@/components/svg/DropDown.vue';
+import ArrowDown from '@/components/svg/ArrowDown.vue';
 
 const props = defineProps<{
   items: MenuItem[];

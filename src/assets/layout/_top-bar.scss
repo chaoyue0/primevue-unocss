@@ -1,0 +1,13 @@
+@import "@/assets/variables/layout/_layout_common.scss";
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  width: 100%;
+  height: $topBarHeight;
+  -moz-transition: width 0.2s;
+  -o-transition: width 0.2s;
+  -webkit-transition: width 0.2s;
+  transition: width 0.2s;
+}
