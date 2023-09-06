@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
 import { MenuGroup, RouteName } from '@/router/router';
+import SearchIcon from '@/components/svg/Search.svg';
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -8,6 +9,7 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('@/views/HomeView.vue'),
     meta: {
       menuGroup: MenuGroup.Home,
+      menuIcon: SearchIcon,
     },
   },
 ];

@@ -34,6 +34,7 @@
             ? 'menu-container-list_active'
             : 'menu-container-list'
         "
+        :is-expand="isToggle || isExpand"
       ></AppSubMenu>
     </div>
   </div>

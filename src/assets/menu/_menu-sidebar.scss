@@ -76,9 +76,12 @@
     }
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   li {
     padding: 10px 0;
-    list-style-type: none;
   }
 }
 
@@ -87,6 +90,14 @@
   padding: 0 ;
   width: $menuWidth;
   transition: all 0.2s;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.menu-container-list_none {
+  display: none;
 }
 
 .menu-list-color_hover {

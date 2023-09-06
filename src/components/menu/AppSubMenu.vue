@@ -8,8 +8,16 @@
           @click="onMenuItemClick($event, item, index)"
           @mouseenter="onMenuItemMouseEnter(index)"
         >
-          <i :class="['menu-menuitem-icon', item.icon]"></i>
-          <span>{{ item.label }}</span>
+          <i v-if="item.icon">
+            <img
+              :src="item.icon"
+              alt=""
+              :class="!props.isExpand ? 'l-ml2' : ''"
+            />
+          </i>
+          <span :class="!props.isExpand ? 'menu-container-list_none' : ''">
+            {{ item.label }}
+          </span>
           <i
             v-if="item.items"
             :class="[
@@ -17,7 +25,11 @@
               hoverIndex === index ? 'menu-list-color_hover' : '',
             ]"
           >
-            <arrow-down></arrow-down>
+            <img
+              :src="ArrowDown"
+              alt=""
+              :class="!props.isExpand ? 'menu-container-list_none' : ''"
+            />
           </i>
         </router-link>
         <a
@@ -25,8 +37,16 @@
           @click="onMenuItemClick($event, item, index)"
           @mouseenter="onMenuItemMouseEnter(index)"
         >
-          <i :class="['layout-menuitem-icon', item.icon, 'menu-i']"></i>
-          <span>{{ item.label }}</span>
+          <i v-if="item.icon">
+            <img
+              :src="item.icon"
+              alt=""
+              :class="!props.isExpand ? 'l-ml2' : ''"
+            />
+          </i>
+          <span :class="!props.isExpand ? 'menu-container-list_none' : ''">
+            {{ item.label }}
+          </span>
           <i
             v-if="item.items"
             :class="[
@@ -34,13 +54,18 @@
               hoverIndex === index ? 'menu-list-color_hover' : '',
             ]"
           >
-            <arrow-down></arrow-down>
+            <img
+              :src="ArrowDown"
+              alt=""
+              :class="!props.isExpand ? 'menu-container-list_none' : ''"
+            />
           </i>
         </a>
         <transition name="menu-list">
           <app-sub-menu
             v-show="activeIndex === index"
             :items="item.items ? item.items : []"
+            :is-expand="props.isExpand"
           ></app-sub-menu>
         </transition>
       </li>
@@ -52,10 +77,11 @@
 import AppSubMenu from '@/components/menu/AppSubMenu.vue';
 import { ref } from 'vue';
 import { type MenuItem } from '@/configs/menu';
-import ArrowDown from '@/components/svg/ArrowDown.vue';
+import ArrowDown from '@/components/svg/ArrowDown.svg';
 
 const props = defineProps<{
   items: MenuItem[];
+  isExpand: boolean;
 }>();
 
 const activeIndex = ref<number | null>(null);

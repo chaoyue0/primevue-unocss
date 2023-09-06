@@ -1,6 +1,7 @@
 import type { Component } from 'vue';
 import { MenuGroup } from '@/router/router';
 import { children } from '@/router';
+import Search from '@/components/svg/Search.svg';
 
 export interface MenuItem {
   label: string;
@@ -15,34 +16,41 @@ menus.push(
   {
     label: MenuGroup.Home,
     index: MenuGroup.Home,
+    icon: Search,
   },
   {
     label: MenuGroup.Layout,
     index: MenuGroup.Layout,
+    icon: Search,
     items: [],
   },
   {
     label: MenuGroup.Input,
     index: MenuGroup.Input,
+    icon: Search,
     items: [],
   },
   {
     label: MenuGroup.Photo,
     index: MenuGroup.Photo,
+    icon: Search,
     items: [],
   },
   {
     label: MenuGroup.Table,
     index: MenuGroup.Table,
+    icon: Search,
   },
   {
     label: MenuGroup.Test,
     index: MenuGroup.Test,
+    icon: Search,
     items: [],
   },
   {
     label: MenuGroup.Mock,
     index: MenuGroup.Mock,
+    icon: Search,
     items: [],
   }
 );
