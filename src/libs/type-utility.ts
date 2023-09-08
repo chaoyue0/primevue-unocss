@@ -1,24 +1,24 @@
-function getTag<T>(value: T) {
+function getTag(value: unknown): string {
   if (value == null) {
     return value === undefined ? '[object Undefined]' : '[object Null]';
   }
   return Object.prototype.toString.call(value);
 }
 
-export function isObjectLike<T>(value: T): value is Extract<T, object> {
+export function isObjectLike(value: unknown): value is Record<any, any> {
   return typeof value == 'object' && value !== null;
 }
 
 //Number
-export function isNumber<T>(value: T): value is Extract<T, number> {
+export function isNumber(value: unknown): value is number {
   return (
     typeof value === 'number' ||
-    (isObjectLike<T>(value) && getTag<T>(value) === '[object Number]')
+    (isObjectLike(value) && getTag(value) === '[object Number]')
   );
 }
 
 //String
-export function isString<T>(value: T): value is Extract<T, string> {
+export function isString(value: unknown): value is string {
   return (
     typeof value === 'string' ||
     (isObjectLike(value) && getTag(value) === '[object String]')
@@ -26,7 +26,7 @@ export function isString<T>(value: T): value is Extract<T, string> {
 }
 
 //Boolean
-export function isBoolean<T>(value: T): value is Extract<T, boolean> {
+export function isBoolean(value: unknown): value is boolean {
   return (
     typeof value === 'boolean' ||
     (isObjectLike(value) && getTag(value) === '[object Boolean]')
@@ -34,16 +34,17 @@ export function isBoolean<T>(value: T): value is Extract<T, boolean> {
 }
 
 //Object
-export function isObject<T>(value: T): value is Extract<T, object> {
+export function isObject(value: unknown): value is Record<any, any> {
   return isObjectLike(value) || typeof value === 'function';
 }
 
 //Function
-export function isFunction<T>(value: T): value is Extract<T, () => unknown> {
+export function isFunction(value: unknown): value is (...args: any) => any {
   if (!isObject(value)) {
     return false;
   }
   return (
+    typeof value === 'function' ||
     getTag(value) === '[object Function]' ||
     getTag(value) === '[object AsyncFunction]' ||
     getTag(value) === '[object GeneratorFunction]'
@@ -91,13 +92,21 @@ export function isError(value: unknown): value is Error {
 }
 
 //Proxy
-export function isProxy(value: unknown): value is ProxyConstructor {
+export function isProxy(value: unknown): value is object {
   if (!isObject(value)) {
     return false;
   }
-  if (typeof Proxy !== 'undefined') {
-    return getTag(value) === '[object Proxy]';
-  } else {
-    return getTag(value) === '[object Object]';
-  }
+
+  return (
+    getTag(value) === '[object Proxy]' || getTag(value) === '[object Object]'
+  );
+}
+
+//Promise
+export function isPromise<T = any>(val: unknown): val is Promise<T> {
+  return (
+    (isObject(val) || isFunction(val)) &&
+    isFunction((val as any).then) &&
+    isFunction((val as any).catch)
+  );
 }
