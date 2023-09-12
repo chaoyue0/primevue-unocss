@@ -6,10 +6,9 @@ import {
   isDate,
   isSet,
   isMap,
-  isError,
   isProxy,
   isPromise,
-} from '@/libs/type-utility';
+} from '@/libs/type/general';
 import { expect, test } from 'vitest';
 
 // isNumber
