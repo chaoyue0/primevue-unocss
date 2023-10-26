@@ -11,16 +11,16 @@
 2、项目的对齐方式以及间隔距离，用到了prop父子传值，通过class动态样式进行控制，动态修改class名显示flex样式库中的样式效果；
 ### 接口说明
 #### Row Attributes
-| 属性名    | 说明                                           | 类型               | 默认值       |
-|--------|----------------------------------------------|------------------|-----------|
-| gutter | 项目之间的距离(主轴和交叉轴)<br/>取值范围：1-10，表示10-100px     | number、undefined | undefined |
-| gutterRow | 主轴项目之间的距离<br/>取值范围：1-10，表示10-100px           | number、undefined | undefined |
-| gutterCol | 交叉轴项目之间的距离<br/>取值范围：1-10，表示10-100px          | number、undefined | undefined |
-| wrap | 表示是否换行                                       | boolean          | true      |
-| direction | 定义主轴的排列方式<br/>enum：row、reverse、col、col-reverse | string           | row     |
-| justify | 表示主轴项目的对齐方式<br/>enum：start、center、end、stretch、baseline | string           | start     |
+| 属性名    | 说明                                                         | 类型               | 默认值       |
+|--------|------------------------------------------------------------|------------------|-----------|
+| gutter | 项目之间的距离(主轴和交叉轴)<br/>取值范围：1-10，表示10-100px                   | number、undefined | undefined |
+| gutterRow | 主轴项目之间的距离<br/>取值范围：1-10，表示10-100px                         | number、undefined | undefined |
+| gutterCol | 交叉轴项目之间的距离<br/>取值范围：1-10，表示10-100px                        | number、undefined | undefined |
+| wrap | 表示是否换行                                                     | boolean          | true      |
+| direction | 定义主轴的排列方式<br/>enum：row、row_reverse、col、col_reverse         | string           | row     |
+| justify | 表示主轴项目的对齐方式<br/>enum：start、center、end、stretch、baseline     | string           | start     |
 | alignItems | 表示交叉轴项目内元素的对齐方式<br/>enum：start、center、end、stretch、baseline | string                              | string           | start     |
-| alignContent | 表示主轴项目的对齐方式<br/>enum：start、center、end、stretch、baseline | string                                  | string           | start     |
+| alignContent | 表示主轴项目的对齐方式<br/>enum：start、center、end、stretch、baseline     | string                                  | string           | start     |
 
 #### Col Attributes
 | 属性名 | 说明                                                   | 类型      | 默认值     |

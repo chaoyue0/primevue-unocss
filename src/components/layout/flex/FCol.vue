@@ -34,7 +34,7 @@ const fColClass = computed(() => {
     props.order ? 'f-order-' + props.order : '',
     props.grow ? 'f-grow-' + props.grow : '',
     props.shrink ? 'f-shrink-' + props.shrink : '',
-    props.alignSelf ? 'f-align-self_' + props.alignSelf : '',
+    props.alignSelf ? 'f-self_' + props.alignSelf : '',
     {
       'f-auto': props.auto,
       'f-none': props.none,

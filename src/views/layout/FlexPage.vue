@@ -12,7 +12,7 @@
       <f-col><div class="box">3</div></f-col>
     </f-row>
     <h3>Reverse</h3>
-    <f-row direction="reverse">
+    <f-row direction="row_reverse">
       <f-col><div class="box">1</div></f-col>
       <f-col><div class="box">2</div></f-col>
       <f-col><div class="box">3</div></f-col>
@@ -24,7 +24,7 @@
       <f-col><div class="box-column">3</div></f-col>
     </f-row>
     <h3>Col-reverse</h3>
-    <f-row direction="col-reverse">
+    <f-row direction="col_reverse">
       <f-col><div class="box-column">1</div></f-col>
       <f-col><div class="box-column">2</div></f-col>
       <f-col><div class="box-column">3</div></f-col>

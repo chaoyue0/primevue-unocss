@@ -1,33 +1,33 @@
 @import "../mixin.scss";
-@mixin f-flex {
-  display: flex;
-}
 .f-flex {
-  @include f-flex;
+ display: flex;
+}
+.f-inline-flex {
+  display: inline-flex;
 }
 
 //Flex Direction
-.f-direction_row {
+.f-row {
   flex-direction: row;
 }
-.f-direction_reverse {
+.f-row_reverse {
   flex-direction: row-reverse;
 }
-.f-direction_col {
+.f-col {
   flex-direction: column;
 }
-.f-direction_col-reverse {
+.f-col_reverse {
   flex-direction: column-reverse;
 }
 
 //Flex Wrap
-.f-wrap_yes {
+.f-wrap {
   flex-wrap: wrap;
 }
-.f-wrap_no {
+.f-nowrap {
   flex-wrap: nowrap;
 }
-.f-wrap-reverse_yes {
+.f-wrap_reverse {
   flex-wrap: wrap-reverse;
 }
 
@@ -62,19 +62,19 @@
 }
 
 //Flex Align Content
-.f-align-content_start {
+.f-content_start {
   align-content: flex-start;
 }
-.f-align-content_center {
+.f-content_center {
   align-content: center;
 }
-.f-align-content_end {
+.f-content_end {
   align-content: flex-end;
 }
-.f-align-content_between {
+.f-content_between {
   align-content: space-between;
 }
-.f-align-content_around {
+.f-content_around {
   align-content: space-around;
 }
 
@@ -131,25 +131,25 @@
 }
 
 //Flex Align Self
-.f-align-self_start {
+.f-self_start {
   align-self: flex-start;
 }
-.f-align-self_center {
+.f-self_center {
   align-self: center;
 }
-.f-align-self_end {
+.f-self_end {
   align-self: flex-end;
 }
-.f-align-self_stretch {
+.f-self_stretch {
   align-self: stretch;
 }
-.f-align-self_baseline {
+.f-self_baseline {
   align-self: baseline;
 }
 
 //Flex Horizontal and vertical Center
 .f-all_center {
-  @include f-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

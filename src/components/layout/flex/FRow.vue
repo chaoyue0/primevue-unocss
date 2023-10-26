@@ -33,14 +33,14 @@ const props = withDefaults(
 const fRowClass = computed(() => {
   return [
     'f-flex',
-    props.wrap ? 'f-wrap_yes' : '',
+    props.wrap ? 'f-wrap' : '',
     props.gutter ? 'f-gap-' + props.gutter : '',
     props.gutterRow ? 'f-gap-row-' + props.gutterRow : '',
     props.gutterCol ? 'f-gap-col-' + props.gutterCol : '',
     props.justify ? 'f-justify_' + props.justify : '',
     props.alignItems ? 'f-align-items_' + props.alignItems : '',
-    props.alignContent ? 'f-align-content_' + props.alignContent : '',
-    props.direction ? 'f-direction_' + props.direction : '',
+    props.alignContent ? 'f-content_' + props.alignContent : '',
+    props.direction ? 'f-' + props.direction : '',
   ];
 });
 </script>
