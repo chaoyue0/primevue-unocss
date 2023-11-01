@@ -8,22 +8,18 @@
   --fix-right-value: 0;
   @include g-grid;
 }
-//容器属性：项目占比空间几等分
-@for $n from 1 through 12 {
+//容器属性：项目几等分
+@for $n from 1 through 24 {
   .g-col#{$n} {
     @include g-grid;
     grid-template-columns: repeat($n,1fr);
   }
 }
-//容器属性：项目部分固定，部分自适应占比空间
+//容器属性：项目部分固定，剩余自适应
 @for $n from 1 through 12 {
   .g-fix#{$n}_left {
     @include g-grid;
     grid-template-columns: $n * 100px auto;
-  }
-  .g-fix#{$n}_center {
-    @include g-grid;
-    grid-template-columns: auto $n * 100px auto;
   }
   .g-fix#{$n}_right {
     @include g-grid;
@@ -33,10 +29,6 @@
 .g-fix_left {
   @include g-grid;
   grid-template-columns: var(--fix-left-value) auto;
-}
-.g-fix_center {
-  @include g-grid;
-  grid-template-columns: auto var(--fix-center-value) auto;
 }
 .g-fix_right {
   @include g-grid;

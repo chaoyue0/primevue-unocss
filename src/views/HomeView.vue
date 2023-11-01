@@ -1,7 +1,7 @@
 <template>
   <div class="card">
-    <h1>So what happened?</h1>
-    <p>
+    <h1 class="center">So what happened?</h1>
+    <p class="grid grid-col-center-200">
       And remember, don't do anything that affects anything, unless it turns out
       you were supposed to, in which case, for the love of God, don't not do it!
       Ow, my spirit! I don't want to be rescued. You guys aren't Santa! You're
@@ -9,6 +9,11 @@
       youth. Suddenly, I'm going to the bathroom like clockwork, every three
       hours. And those jerks at Social Security stopped sending me checks. Now
       'I' have to pay 'them'!
+    </p>
+    <p class="grid grid-col-10">
+      I'm going to the bathroom like clockwork, every three hours. And those
+      jerks at Social Security stopped sending me checks. Now 'I' have to pay
+      'them'!
     </p>
     <form>
       <div>
