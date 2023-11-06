@@ -1,9 +1,5 @@
 import type { Preset } from 'unocss';
 
-function toPx(value: number, unit: 'px') {
-  return value + unit;
-}
-
 const enum align {
   start = 'flex-start',
   center = 'center',
