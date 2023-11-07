@@ -20,10 +20,10 @@ export default function layoutPreset(): Preset {
       ['bottom-auto', { bottom: 'auto' }],
       ['left-auto', { left: 'auto' }],
 
-      [/^top-(\d+)%$/, ([, d]) => ({ top: `${d}%` })],
-      [/^right-(\d+)%$/, ([, d]) => ({ right: `${d}%` })],
-      [/^bottom-(\d+)%$/, ([, d]) => ({ bottom: `${d}%` })],
-      [/^left-(\d+)%$/, ([, d]) => ({ left: `${d}%` })],
+      [/^top-(\d+)(%{1})$/, ([, d]) => ({ top: `${d}%` })],
+      [/^right-(\d+)(%{1})$/, ([, d]) => ({ right: `${d}%` })],
+      [/^bottom-(\d+)(%{1})$/, ([, d]) => ({ bottom: `${d}%` })],
+      [/^left-(\d+)(%{1})$/, ([, d]) => ({ left: `${d}%` })],
 
       [/^top-(\d+)$/, ([, d]) => ({ top: `${d}px` })],
       [/^right-(\d+)$/, ([, d]) => ({ right: `${d}px` })],
