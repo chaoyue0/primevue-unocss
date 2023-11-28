@@ -1,15 +1,14 @@
 <template>
   <div class="f-flex">
     <AppMenu></AppMenu>
-    <!--      <menu-group>-->
-    <!--        <template #logo>-->
-    <!--          <img src="/src/assets/logo.png" alt="logo" />-->
-    <!--        </template>-->
-    <!--      </menu-group>-->
     <div class="layout-main">
       <AppTopBar></AppTopBar>
       <div class="layout-content">
-        <router-view></router-view>
+        <router-view v-slot="{ Component, route }">
+          <keep-alive :max="30">
+            <component :is="Component" :key="route.fullPath" />
+          </keep-alive>
+        </router-view>
       </div>
     </div>
   </div>

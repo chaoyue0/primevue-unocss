@@ -16,6 +16,7 @@ export const RouteName = {
   ResponsivePage: 'ResponsivePage',
   MockTest1: 'MockTest1',
   MockTest2: 'MockTest2',
+  DownloadPage: 'DownloadPage',
 };
 
 export const enum MenuGroup {

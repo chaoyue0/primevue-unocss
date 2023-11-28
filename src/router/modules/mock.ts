@@ -10,6 +10,14 @@ export const routes: RouteRecordRaw[] = [
       menuGroup: MenuGroup.Mock,
     },
   },
+  {
+    path: '/download',
+    name: RouteName.DownloadPage,
+    component: () => import('@/views/download/DownloadPage.vue'),
+    meta: {
+      menuGroup: MenuGroup.Mock,
+    },
+  },
 ];
 
 export default routes;

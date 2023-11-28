@@ -18,7 +18,6 @@ export function saveFile(blob: Blob, name: string): void {
     tempLink.href = blobUrl;
     tempLink.setAttribute('download', name);
     tempLink.setAttribute('target', '_blank');
-    console.log('tempLink', tempLink);
     document.body.appendChild(tempLink);
     let event;
     try {
