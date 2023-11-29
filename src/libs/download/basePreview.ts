@@ -1,8 +1,4 @@
-const basePreview = (
-  downloadUrl: string,
-  fileName: string,
-  target?: boolean
-) => {
+const basePreview = (downloadUrl: string, fileName: string, target = true) => {
   const formObj = document.createElement('form');
   formObj.action = downloadUrl;
   formObj.method = 'get';

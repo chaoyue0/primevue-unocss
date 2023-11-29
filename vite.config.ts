@@ -13,5 +13,12 @@ export default defineConfig({
   },
   server: {
     host: true,
+    proxy: {
+      '/api': {
+        target: 'https://c.53326.com/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/\/api/, ''),
+      },
+    },
   },
 });
