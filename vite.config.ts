@@ -15,7 +15,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'https://c.53326.com/',
+        target: 'https://images.pexels.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/\/api/, ''),
       },

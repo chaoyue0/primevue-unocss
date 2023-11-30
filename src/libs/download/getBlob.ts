@@ -3,18 +3,25 @@ const getBlob = (url: string): Blob => {
   x.open('get', url, true);
   x.responseType = 'blob';
   x.onload = () => {
-    console.log('>>>', x.response);
-    return x.response;
+    if (x.status === 200) {
+      return x.response;
+    }
   };
-  x.onprogress = (e: any) => {
+  x.onprogress = (e: ProgressEvent) => {
     handleEvent(e);
   };
   x.send();
   return x.response;
 };
 
-const handleEvent = (e: any) => {
-  console.log(`${e.type}: ${e.loaded} bytes transferred\n`);
+const handleEvent = (e: ProgressEvent) => {
+  const progress = e.loaded;
+  const timeStamp = e.timeStamp;
+  const total = e.total;
+  const percentage = Math.round(+(progress / total).toFixed(2) * 100) + '%';
+  console.log(
+    `'progress': ${progress} 'percentage': ${percentage} 'timeStamp': ${timeStamp} \n`
+  );
 };
 
 export default getBlob;
