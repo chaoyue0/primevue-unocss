@@ -2,29 +2,21 @@
   <div class="card">
     <h1>margin and padding</h1>
     <p>inline-element</p>
-    <el-input v-model="marginNum" placeholder="请输入margin值" clearable />
-    <el-input v-model="paddingNum" placeholder="请输入padding值" clearable />
-    <el-button @click="doReset">重置</el-button>
-    <el-button
-      :class="dynamicMarginStyle()"
-      size="small"
-      @click="marginNum = 1"
-    >
+    <InputText v-model="marginNum" placeholder="请输入margin值" clearable />
+    <InputText v-model="paddingNum" placeholder="请输入padding值" clearable />
+    <Button @click="doReset">重置</Button>
+    <Button :class="dynamicMarginStyle()" size="small" @click="marginNum = 1">
       element-margin-1
-    </el-button>
-    <el-button :class="dynamicMarginStyle()" @click="marginNum = 2">
+    </Button>
+    <Button :class="dynamicMarginStyle()" @click="marginNum = 2">
       element-margin-2
-    </el-button>
-    <el-button :class="dynamicPaddingStyle()" disabled @click="paddingNum = 1">
+    </Button>
+    <Button :class="dynamicPaddingStyle()" disabled @click="paddingNum = 1">
       element-padding-1
-    </el-button>
-    <el-button
-      type="text"
-      :class="dynamicPaddingStyle()"
-      @click="paddingNum = 2"
-    >
+    </Button>
+    <Button :class="dynamicPaddingStyle()" @click="paddingNum = 2">
       element-padding-2
-    </el-button>
+    </Button>
   </div>
 </template>
 

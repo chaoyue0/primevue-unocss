@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <el-button @click="doPreview">普通文件预览</el-button>
-    <el-button @click="doDownload">普通文件下载</el-button>
-    <el-button @click="getBlob(mediumFileUrl)">获取Blob</el-button>
-    <el-button @click="doStreamDownload">流式文件下载</el-button>
+    <Button @click="doPreview">普通文件预览</Button>
+    <Button @click="doDownload">普通文件下载</Button>
+    <Button @click="getBlob(mediumFileUrl)">获取Blob</Button>
+    <Button @click="doStreamDownload">流式文件下载</Button>
     <br />
     <hr />
     <ProgressDownload :url="mediumFileUrl" />

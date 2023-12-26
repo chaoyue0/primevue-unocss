@@ -1,9 +1,9 @@
 <template>
   <div class="card">
     <h1>photo optimization</h1>
-    <el-button @click="doOpen">打开抽屉</el-button>
-    <el-button @click="startListen">开启区域A事件监听</el-button>
-    <el-button @click="cancelListen">取消区域A事件监听</el-button>
+    <Button @click="doOpen">打开抽屉</Button>
+    <Button @click="startListen">开启区域A事件监听</Button>
+    <Button @click="cancelListen">取消区域A事件监听</Button>
     <div class="flex-column">
       <p>区域A</p>
       <img
@@ -17,8 +17,8 @@
       <div class="border-loader"></div>
     </div>
     <div class="flex-column out-of-document">
-      <el-button @click="startCListen">开启区域C事件监听</el-button>
-      <el-button @click="cancelCListen">取消区域C事件监听</el-button>
+      <Button @click="startCListen">开启区域C事件监听</Button>
+      <Button @click="cancelCListen">取消区域C事件监听</Button>
       <p>区域C</p>
       <img
         v-for="img in photoList"
@@ -29,7 +29,7 @@
         alt="loading"
       />
     </div>
-    <el-drawer ref="drawerRef" v-model="drawer" @close="doClose">
+    <Sidebar ref="drawerRef" v-model="drawer" @close="doClose">
       <div class="flex-column">
         <p>区域B</p>
         <img
@@ -41,7 +41,7 @@
           alt="loading"
         />
       </div>
-    </el-drawer>
+    </Sidebar>
   </div>
 </template>
 

@@ -78,6 +78,7 @@ import AppSubMenu from '@/components/menu/AppSubMenu.vue';
 import { ref } from 'vue';
 import { type MenuItem } from '@/configs/menu';
 import ArrowDown from '@/components/svg/ArrowDown.svg';
+import { useViewStore } from '@/stores/view';
 
 const props = defineProps<{
   items: MenuItem[];
@@ -87,15 +88,18 @@ const props = defineProps<{
 const activeIndex = ref<number | null>(null);
 const hoverIndex = ref<number | null>(null);
 
+const viewStore = useViewStore();
 const onMenuItemClick = (event: Event, item: any, index: number) => {
   if (item.items) {
     activeIndex.value = index === activeIndex.value ? null : index;
+    viewStore.addView(item.items);
     const i = document.querySelector('.menu-i-arrow_rotate');
     if (i) {
       i.classList.add('menu-i-arrow_back');
     }
   } else {
     activeIndex.value = index;
+    viewStore.addView(item);
   }
 };
 

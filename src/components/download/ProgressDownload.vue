@@ -1,10 +1,10 @@
 <template>
-  <el-button
+  <Button
     :loading="loading"
     @click="streamDownload(props.url, 'streamFileDemo')"
   >
     下载 {{ percentage }}
-  </el-button>
+  </Button>
   <progress
     max="100"
     :value="percentage ? parseInt(percentage ? percentage : '') : ''"

@@ -1,6 +1,7 @@
 <template>
   <div class="f-flex">
-    <AppMenu></AppMenu>
+    <!--    <AppMenu></AppMenu>-->
+    <PrimeMenu></PrimeMenu>
     <div class="layout-main">
       <AppTopBar></AppTopBar>
       <div class="layout-content">
@@ -18,6 +19,7 @@
 import { RouterView } from 'vue-router';
 import AppTopBar from '@/components/layout/AppTopBar.vue';
 import AppMenu from '@/components/menu/AppMenu.vue';
+import PrimeMenu from '@/components/menu/PrimeMenu.vue';
 </script>
 
 <style scoped></style>
