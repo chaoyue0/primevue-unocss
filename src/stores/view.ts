@@ -1,15 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import type { Component } from 'vue';
-import type { MenuItem } from '@/configs/menu';
-
-export interface ViewItem {
-  label: string;
-  icon?: string | Component;
-}
+import type { MenuItem } from 'primevue/menuitem';
 
 export const useViewStore = defineStore('view', () => {
-  const views = ref<ViewItem[]>([]);
+  const views = ref<MenuItem[]>([]);
 
   const addView = (menu: MenuItem) => {
     views.value?.push({

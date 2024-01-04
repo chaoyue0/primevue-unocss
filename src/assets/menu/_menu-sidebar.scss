@@ -34,7 +34,7 @@
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  border: 2px solid #dee2e6;
+  border: 2px solid #ffffff;
   cursor: pointer;
 }
 
@@ -44,7 +44,7 @@
 
 .menu-sidebar-pin_active {
   display: inline-block;
-  border: 2px solid var(--wg-color-primary);
+  border: 2px solid var(--primary-color);
   background-color: rgba(119, 123, 241, 0.1);
 }
 
