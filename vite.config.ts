@@ -2,10 +2,11 @@ import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import UnoCSS from 'unocss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), UnoCSS()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -13,6 +14,9 @@ export default defineConfig({
   },
   server: {
     host: true,
+    hmr: {
+      overlay: false,
+    },
     proxy: {
       '/api': {
         target: 'https://images.pexels.com',
