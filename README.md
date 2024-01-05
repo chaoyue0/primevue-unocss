@@ -43,3 +43,20 @@ nvm默认node镜像源是https://nodejs.org/dist，从默认镜像源下载会�
 ## 4、数值
 0-1之间的数值，省略整数部分的0，例如：0.8只写.8
 定义line-height用数值表示相对于字号的行高
+
+
+# 依赖说明
+因json格式天然不能注释，且npm体系内目前没有优雅解，需要以文档形式标注。
+每增加一个依赖，要说明其作用，选择依据，版本要求和注意事项，以方便升级和维护。
+依赖的版本，建议固定具体版本，至少固定小版本，主要考虑到npm社区的脆弱性
+
+## 运行依赖 Dependencies
+
+- pinia：状态管理器
+- primeflex：css工具库，包含flexbox、grid系统以及常见布局样式
+- primeicons： primeVue默认的icon库
+- primevue：css样式库
+- unocss：原子化css引擎，更灵活、可扩展性更强
+
+
+## 编译依赖 DevDependencies
