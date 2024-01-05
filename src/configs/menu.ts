@@ -1,6 +1,5 @@
 import { MenuGroup } from '@/router/router';
 import { children } from '@/router';
-import Search from '@/components/svg/Search.svg';
 import type { MenuItem } from 'primevue/menuitem';
 
 export const menus: MenuItem[] = [];
@@ -9,41 +8,41 @@ menus.push(
   {
     label: MenuGroup.Home,
     url: MenuGroup.Home,
-    icon: Search,
+    icon: 'pi pi-box',
   },
   {
     label: MenuGroup.Layout,
     url: MenuGroup.Layout,
-    icon: Search,
+    icon: 'pi pi-box',
     items: [],
   },
   {
     label: MenuGroup.Input,
     url: MenuGroup.Input,
-    icon: Search,
+    icon: 'pi pi-box',
     items: [],
   },
   {
     label: MenuGroup.Photo,
     url: MenuGroup.Photo,
-    icon: Search,
+    icon: 'pi pi-box',
     items: [],
   },
   {
     label: MenuGroup.Table,
     url: MenuGroup.Table,
-    icon: Search,
+    icon: 'pi pi-box',
   },
   {
     label: MenuGroup.Test,
     url: MenuGroup.Test,
-    icon: Search,
+    icon: 'pi pi-box',
     items: [],
   },
   {
     label: MenuGroup.Mock,
     url: MenuGroup.Mock,
-    icon: Search,
+    icon: 'pi pi-box',
     items: [],
   }
 );

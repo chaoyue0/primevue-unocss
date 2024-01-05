@@ -1,62 +1,42 @@
 @import "@/assets/variables/layout/_layout_common.scss";
 @import "@/assets/variables/font/_font_common.scss";
 
-.menu-wrapper {
-  height: 100%;
-  background-color: var(--wg-color-white);
-}
-
-.menu-wrapper_fixed {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  background-color: var(--wg-color-white);
-}
-
 .menu-sidebar_active {
   height: $topBarHeight;
+  width: $menuActiveWidth;
   padding: 0 20px;
+  transition: all 1s;
 }
 
 .menu-sidebar {
   height: $topBarHeight;
   width: $menuWidth;
+  transition: all 1s;
 }
 
 .menu-sidebar-photo {
-  width: 80px;
+  width: $menuWidth;
 }
 
 .menu-sidebar-pin {
-  display: none;
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid #dee2e6;
   cursor: pointer;
-}
-
-.menu-sidebar-pin_expand {
-  display: inline-block;
 }
 
 .menu-sidebar-pin_active {
   display: inline-block;
   border: 2px solid var(--primary-color);
-  background-color: rgba(119, 123, 241, 0.1);
 }
 
-.menu-container {
-  height: calc(100% - #{$topBarHeight});
-}
 
 .menu-container-list_active {
   margin: 0;
   padding: 0 ;
   width: $menuActiveWidth;
-  transition: all 0.2s;
+  transition: all 1s;
   overflow: hidden;
 
   a {
@@ -69,19 +49,13 @@
 
     span {
       margin: 0 8px 0 14px;
-      font-weight: 600;
-      font-size: $fontSizeSmall;
       line-height: 14px;
       white-space: nowrap;
     }
   }
 
-  ul {
-    list-style-type: none;
-  }
-
-  li {
-    padding: 10px 0;
+  ul li {
+    margin-left: 14px;
   }
 }
 
@@ -89,52 +63,9 @@
   margin: 0;
   padding: 0 ;
   width: $menuWidth;
-  transition: all 0.2s;
+  transition: all 1s;
 
-  ul {
-    list-style-type: none;
+  .pi {
+    font-size: calc($menuWidth - 2px);
   }
-}
-
-.menu-container-list_none {
-  display: none;
-}
-
-.menu-list-color_hover {
-  > a {
-    color: var(--wg-color-primary);
-  }
-  svg path {
-    stroke: var(--wg-color-primary);
-  }
-}
-
-.menu-list-leave-to {
-  max-height: 0;
-}
-
-.menu-list-leave-from {
-  max-height: 1000px;
-}
-
-.menu-list-leave-active {
-  overflow: hidden;
-  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
-}
-
-.menu-list-enter-from {
-  max-height: 0;
-}
-
-.menu-list-enter-to {
-  max-height: 1000px;
-}
-
-.menu-list-enter-active {
-  overflow: hidden;
-  transition: max-height 1s ease-in-out;
-}
-
-.menu-list-arrow {
-  margin-left: auto;
 }

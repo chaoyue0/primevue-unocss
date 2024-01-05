@@ -71,7 +71,7 @@ export default function flexPreset(): Preset {
     ],
     shortcuts: [
       {
-        'flex-center': 'flex flex-justify-center flex-items-end',
+        'f-center': 'flex flex-justify-center flex-items-center',
       },
     ],
   };

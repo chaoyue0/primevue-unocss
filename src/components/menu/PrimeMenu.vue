@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div @mouseover="onMenuMouseOver" @mouseout="onMenuMouseOut">
     <div
-      class="f-flex f-justify_between f-align-items_center"
+      class="f-center flex-justify-between"
       :class="isToggle || isExpand ? 'menu-sidebar_active' : 'menu-sidebar'"
     >
       <router-link to="/">
@@ -14,7 +14,7 @@
       <a
         class="menu-sidebar-pin"
         :class="{
-          'menu-sidebar-pin_expand': isExpand,
+          inline: isExpand,
           'menu-sidebar-pin_active': isToggle,
         }"
         @click="onToggleMenu"
@@ -22,16 +22,29 @@
         <span></span>
       </a>
     </div>
-    <PanelMenu :model="menuStore.menu" class="menu-sidebar">
+    <PanelMenu
+      :model="menuStore.menu"
+      :class="
+        isToggle || isExpand
+          ? 'menu-container-list_active'
+          : 'menu-container-list'
+      "
+    >
       <template #item="{ item, props }">
         <router-link v-if="!item.items" :to="item.url" v-bind="props.action">
-          <span :class="['ml-2']">{{ item.label }}</span>
-          <span v-if="item.items" class="pi pi-angle-down text-primary ml-auto">
-            ***
+          <i :class="item.icon"></i>
+          <span v-show="isToggle || isExpand">
+            {{ item.label }}
           </span>
         </router-link>
-        <a v-else>
-          <span :class="['ml-2']">{{ item.label }}</span>
+        <a v-else class="flex flex-justify-between">
+          <div>
+            <i :class="item.icon"></i>
+            <span v-show="isToggle || isExpand" class="font-semibold">
+              {{ item.label }}
+            </span>
+          </div>
+          <i v-show="isToggle || isExpand" class="pi pi-angle-down"></i>
         </a>
       </template>
     </PanelMenu>
@@ -44,12 +57,19 @@ import { useMenuStore } from '@/stores/menu';
 import { ref } from 'vue';
 
 const menuStore = useMenuStore();
-const isToggle = ref(true);
 const isExpand = ref(false);
-const activeIndex = ref<number | null>(null);
+const isToggle = ref(false);
 
 const onToggleMenu = () => {
   isToggle.value = !isToggle.value;
+};
+
+const onMenuMouseOver = () => {
+  isExpand.value = true;
+};
+
+const onMenuMouseOut = () => {
+  isExpand.value = false;
 };
 </script>
 

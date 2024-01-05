@@ -1,6 +1,5 @@
 <template>
   <div class="f-flex">
-    <!--    <AppMenu></AppMenu>-->
     <PrimeMenu></PrimeMenu>
     <div class="layout-main">
       <AppTopBar></AppTopBar>
