@@ -1,5 +1,9 @@
 <template>
-  <div @mouseover="onMenuMouseOver" @mouseout="onMenuMouseOut">
+  <div
+    :class="isToggle ? '' : 'menu'"
+    @mouseover="onMenuMouseOver"
+    @mouseout="onMenuMouseOut"
+  >
     <div
       class="f-center flex-justify-between"
       :class="isToggle || isExpand ? 'menu-sidebar_active' : 'menu-sidebar'"
@@ -31,13 +35,26 @@
       "
     >
       <template #item="{ item, props }">
-        <router-link v-if="!item.items" :to="item.url" v-bind="props.action">
+        <router-link
+          v-if="!item.items"
+          :to="item.url"
+          v-bind="props.action"
+          :class="['flex', isToggle || isExpand ? '' : 'flex-justify-center']"
+        >
           <i :class="item.icon"></i>
           <span v-show="isToggle || isExpand">
             {{ item.label }}
           </span>
         </router-link>
-        <a v-else class="flex flex-justify-between">
+        <a
+          v-else
+          :class="[
+            'flex',
+            isToggle || isExpand
+              ? 'flex-justify-between'
+              : 'flex-justify-center',
+          ]"
+        >
           <div>
             <i :class="item.icon"></i>
             <span v-show="isToggle || isExpand" class="font-semibold">
@@ -60,8 +77,11 @@ const menuStore = useMenuStore();
 const isExpand = ref(false);
 const isToggle = ref(false);
 
+const emit = defineEmits<{ (e: 'doToggle'): void }>();
+
 const onToggleMenu = () => {
   isToggle.value = !isToggle.value;
+  emit('doToggle');
 };
 
 const onMenuMouseOver = () => {
@@ -71,6 +91,8 @@ const onMenuMouseOver = () => {
 const onMenuMouseOut = () => {
   isExpand.value = false;
 };
+
+defineExpose({ isToggle });
 </script>
 
 <style scoped></style>

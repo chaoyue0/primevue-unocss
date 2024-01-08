@@ -52,11 +52,11 @@ nvm默认node镜像源是https://nodejs.org/dist，从默认镜像源下载会�
 
 ## 运行依赖 Dependencies
 
-- pinia：状态管理器
-- primeflex：css工具库，包含flexbox、grid系统以及常见布局样式
-- primeicons： primeVue默认的icon库
-- primevue：css样式库
-- unocss：原子化css引擎，更灵活、可扩展性更强
+- pinia：状态管理器([Pinia](https://pinia.vuejs.org/))
+- primeflex：css工具库，包含flexbox、grid系统以及常见布局样式([PrimeFlex](https://primeflex.org/installation))
+- primeicons： primeVue默认的icon库([PrimeIcons](https://primevue.org/icons/))
+- primevue：css样式库([PrimeVue](https://primevue.org/introduction/))
+- unocss：原子化css引擎，更灵活、可扩展性更强([UnoCSS](https://unocss.dev/guide/) / [preset-uno文档](https://unocss.dev/interactive/))
 
 
 ## 编译依赖 DevDependencies
