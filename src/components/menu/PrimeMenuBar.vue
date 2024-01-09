@@ -1,5 +1,14 @@
 <template>
   <Menubar :model="menuStore.menu">
+    <template #start>
+      <router-link to="/">
+        <img
+          class="menu-sidebar-photo"
+          src="@/assets/logo.png"
+          alt="menu-layout"
+        />
+      </router-link>
+    </template>
     <template #item="{ item, props, hasSubmenu }">
       <router-link
         v-if="!item.items"

@@ -1,24 +1,14 @@
 <template>
-  <div class="top-bar">
-    <TabView :active-index="activeIndex">
-      <TabPanel
-        v-for="tab in viewStore.views"
-        :key="tab.label"
-        :header="tab.label"
-      >
-      </TabPanel>
-    </TabView>
+  <div class="flex layout-top-bar">
+    <PrimeMenuBar v-show="props.menuType === 'Horizontal'"></PrimeMenuBar>
+    <div class="ml-auto f-center color-red">To be determined area</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import TabView from 'primevue/tabview';
-import TabPanel from 'primevue/tabpanel';
-import { useViewStore } from '@/stores/view';
-import { ref } from 'vue';
+import PrimeMenuBar from '@/components/menu/PrimeMenuBar.vue';
 
-const viewStore = useViewStore();
-const activeIndex = ref(0);
+const props = defineProps<{ menuType: string }>();
 </script>
 
 <style scoped></style>

@@ -4,11 +4,8 @@
       v-show="menuType === 'Sidebar'"
       @do-toggle="doToggle"
     ></PrimeMenu>
-    <div
-      class="layout-main"
-      :style="menuType === 'Horizontal' ? 'padding-top: unset' : ''"
-    >
-      <PrimeMenuBar v-show="menuType === 'Horizontal'"></PrimeMenuBar>
+    <div class="layout-main">
+      <AppTopBar :menu-type="menuType"></AppTopBar>
       <div
         class="layout-content"
         :class="isToggle || menuType === 'Horizontal' ? '' : 'ml15.5'"
@@ -27,9 +24,9 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 import PrimeMenu from '@/components/menu/PrimeMenu.vue';
-import { ref } from 'vue';
-import PrimeMenuBar from '@/components/menu/PrimeMenuBar.vue';
 import CustomMade from '@/components/custom/CustomMade.vue';
+import AppTopBar from '@/components/layout/AppTopBar.vue';
+import { ref } from 'vue';
 
 const isToggle = ref(false);
 const menuType = ref('');

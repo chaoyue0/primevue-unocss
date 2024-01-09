@@ -5,7 +5,10 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
-  padding-top: $topBarHeight;
+}
+
+.layout-top-bar {
+  height: $topBarHeight;
 }
 
 .layout-content {

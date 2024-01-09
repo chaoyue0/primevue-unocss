@@ -19,9 +19,7 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        target: 'https://images.pexels.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/\/api/, ''),
       },
     },
   },
